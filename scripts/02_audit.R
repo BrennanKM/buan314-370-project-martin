@@ -200,8 +200,6 @@ out <- c(
   "",
   "What the raw data looked like before any cleaning (course Prompt 5.1). **Report only: nothing was fixed, dropped or saved as data.** This file is written by `scripts/02_audit.R`; do not edit it by hand.",
   "",
-  sprintf("Run on %s.", format(Sys.Date())),
-  "",
   "## 1. What was read",
   "",
   sprintf("- %d workbooks, %d sheets. Each workbook holds one sheet for its own year and (except the first) one for the prior year.", n_distinct(blocks$source_file), n_distinct(paste(blocks$source_file, blocks$sheet))),

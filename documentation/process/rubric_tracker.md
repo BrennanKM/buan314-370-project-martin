@@ -12,11 +12,11 @@ Last updated: 2026-11-23, end of session 1.
 | # | Component | Weight | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|---|---|
 | R1 | Problem framing | 10% | "Three statements with all five parts each; the descriptive one is answerable from the data; the predictive one names a numeric and a yes-or-no target; the prescriptive one names a decision. The wording is specific and the student's own." | at risk | documentation/proposal.md section 2 | Brennan (agent drafts and critiques) | Structure nearly there; wording is not Brennan's yet (O-001) |
-| R2 | Data source and provenance | 10% | "A primary, documented source that fits the question and meets the size, variable and correlation requirements; a scorecard backed by evidence; a provenance record from which a stranger could obtain the identical file." | in progress | documentation/proposal.md sections 3 to 5; documentation/data_provenance.md | agent (Brennan decides go / no-go) | Gate decided: go (D-016). Raw files not yet downloaded by Brennan |
-| R3 | Preparation and codebook | 10% | "Every cleaning step is a recorded decision with a reason and a row count; the accounting closes; the codebook is complete and checked against the data; tests pass." | todo | | agent (Brennan decides each step) | |
+| R2 | Data source and provenance | 10% | "A primary, documented source that fits the question and meets the size, variable and correlation requirements; a scorecard backed by evidence; a provenance record from which a stranger could obtain the identical file." | in progress | documentation/proposal.md sections 3 to 5; documentation/data_provenance.md; documentation/raw_file_checksums.csv | agent (Brennan decides go / no-go) | Gate: go (D-016). 3 provenance fields UNVERIFIED |
+| R3 | Preparation and codebook | 10% | "Every cleaning step is a recorded decision with a reason and a row count; the accounting closes; the codebook is complete and checked against the data; tests pass." | in progress | documentation/cleaning_plan.md (17 decisions), wrangling_log.md, codebook.md, output/tables/validation_results.csv | agent (Brennan decides each step) | Codebook still to be read against the data by Brennan |
 | R4 | Exploratory analysis and prototyped visualizations | 15% | "Sub-questions trace to the problem statement; each has an answer with a number and its count; the correlation matrix is built and read correctly; interpretations weigh alternative explanations; six prototyped visualizations meet the standards, map each variable to a plot element that suits its type, and make their intended comparisons easy." | todo | | agent builds; Brennan interprets | |
 | R5 | Predictive models | 10% | "Linear regression applied to both sub-specifications, the regression problem and the classification problem (linear probability model), and no other method; predictors justified from the exploration; slopes interpreted in the right units; fit and classification reported plainly, including predictions outside 0 to 1; the limits of judging a model on its own data stated." | todo | | agent fits; Brennan chooses and interprets | |
-| R6 | Replication and version control | 10% | "A fresh copy reproduces every output from the README alone; the commit history shows the project being built over time; logs are complete." | todo | | agent | |
+| R6 | Replication and version control | 10% | "A fresh copy reproduces every output from the README alone; the commit history shows the project being built over time; logs are complete." | in progress | scripts/run_all.R runs 5 scripts from a clean session in 7.9 seconds; renv.lock | agent | Fresh-copy test comes in Part 9 |
 | R7 | Static report | 10% | "Written for the decision-maker; organized by question; every number sourced; limitations stated plainly; no code; typeset in LaTeX and compiled in Overleaf." | todo | | Brennan writes; agent typesets; Brennan compiles | |
 | R8 | Interactive report | 10% | "One hand-written HTML file with its own CSS and JavaScript that works offline and at a public address; the report's visualizations rebuilt in the page, at least three of them interactive, and an explorer, each interaction used for a reason; numbers and colors consistent with the static report; data written into the page by a script." | todo | | agent (Brennan's wording) | |
 | R9 | Presentation | 10% | "Twenty minutes, plus or minus two; a clear line from decision to recommendation; closes with limitations, next steps and a candid discussion of the postmortem; delivered to the camera without reading; the student can explain every choice; slides handed in as a PDF with the prototyped visualizations." | todo | | Brennan (agent makes slides and cue cards) | |
@@ -28,11 +28,11 @@ Last updated: 2026-11-23, end of session 1.
 |---|---|---|---|---|---|---|
 | C1 | Framing and data | "Three problem statements (descriptive, predictive, prescriptive) in my own words, in the README and both reports." | todo | | Brennan | |
 | C2 | Framing and data | "Viability scorecard with no fails, in documentation/proposal.md." | met | documentation/proposal.md section 5 | agent | 0 fails; 3 concerns |
-| C3 | Framing and data | "Data meet the requirements: about 500 observations or more (or the instructor's approval), at least three numeric and two categorical variables." | todo | | agent | |
+| C3 | Framing and data | "Data meet the requirements: about 500 observations or more (or the instructor's approval), at least three numeric and two categorical variables." | met | documentation/data_audit.md section 1 and 2 | agent | 923 rows; 4 numeric, 5 categorical as published |
 | C4 | Framing and data | "Provenance record complete, with nothing marked UNVERIFIED." | todo | | agent + Brennan | |
-| C5 | Framing and data | "Raw data in data/raw untouched, or a script that downloads them." | todo | | agent | |
-| C6 | Framing and data | "Codebook with one row per variable and nothing marked UNDOCUMENTED." | todo | | agent + Brennan | |
-| C7 | Framing and data | "Wrangling log whose row accounting adds up; validation script passes." | todo | | agent | |
+| C5 | Framing and data | "Raw data in data/raw untouched, or a script that downloads them." | met | data/raw (not published) + documentation/data_provenance.md manual steps + scripts/01_verify_raw.R | agent | Neither the files nor a download script can be published under the site terms; manual steps with checksums take their place |
+| C6 | Framing and data | "Codebook with one row per variable and nothing marked UNDOCUMENTED." | in progress | documentation/codebook.md | agent + Brennan | Complete; Brennan's read-through owed |
+| C7 | Framing and data | "Wrangling log whose row accounting adds up; validation script passes." | met | documentation/wrangling_log.md; output/tables/validation_results.csv | agent |  |
 | C8 | Analysis, figures and models | "Exploration plan with 'what I expect' and 'what I found' filled in for every sub-question." | todo | | Brennan | |
 | C9 | Analysis, figures and models | "Correlation matrix as a table and a heat map, showing at least weak to moderate correlation with each target." | todo | | agent | |
 | C10 | Analysis, figures and models | "At least six prototyped visualizations in four or more chart forms, made by scripts, meeting the figure standards, and used in both the LaTeX report and the slides." | todo | | agent | |
@@ -76,9 +76,9 @@ Last updated: 2026-11-23, end of session 1.
 | # | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|
 | P2.1 | "The scorecard has no fails, and each concern has a stated resolution." | met | documentation/proposal.md section 5: 8 pass, 3 concern, 0 fail; each concern has a resolution | agent | License stays a concern with nothing in writing (D-016) |
-| P2.2 | "You downloaded the file yourself and can state from memory: what one row is, the period covered, and the number of rows and columns." | at risk |  | Brennan | Brennan has not downloaded a file yet (O-002) |
-| P2.3 | "The data have about 500 observations or more, or you have the instructor's approval, with at least three numeric and at least two categorical variables." | in progress | documentation/proposal.md section 4: 923 active rows, 4 numeric, 5 categorical | agent | From screening copies; to be confirmed on the hand-downloaded files |
-| P2.4 | "The correlation matrix shows at least weak to moderate correlation with each of your two targets." | in progress | documentation/proposal.md section 4: r = 0.59 and r = -0.46 with the two targets | agent | From screening copies; to be confirmed on the hand-downloaded files |
+| P2.2 | "You downloaded the file yourself and can state from memory: what one row is, the period covered, and the number of rows and columns." | in progress | Six workbooks downloaded by Brennan 2026-11-23 14:00 PT (download record on each file; checksums in documentation/raw_file_checksums.csv) | Brennan | Second half of the checkpoint is Brennan's: state from memory what one row is, the period, and the row and column counts |
+| P2.3 | "The data have about 500 observations or more, or you have the instructor's approval, with at least three numeric and at least two categorical variables." | met | documentation/data_audit.md section 1: 923 operator-months with wagering; 4 numeric and 5 categorical columns as published | agent |  |
+| P2.4 | "The correlation matrix shows at least weak to moderate correlation with each of your two targets." | in progress | documentation/proposal.md section 4 (screen): r = 0.59 and r = -0.46 | agent | Full correlation matrix on the cleaned data comes in Part 6 |
 | P2.5 | "Your three problem statements have been revised to match what the data contain." | in progress | documentation/proposal.md sections 1, 2 and 6 | agent | Drafts match the data; wording not yet Brennan's |
 | P2.6 | "The statements and the scorecard are saved as your proposal (Milestone 1)." | in progress | documentation/proposal.md | agent | Milestone 1 not final until O-001, O-002 and O-004 are closed |
 
@@ -95,19 +95,19 @@ Last updated: 2026-11-23, end of session 1.
 
 | # | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|
-| P4.1 | "A person with only your repository can obtain the same raw file you have, and the checksum proves it is the same." | todo |  | agent |  |
-| P4.2 | "The provenance record has no field marked UNVERIFIED. You resolved each one yourself." | todo |  | Brennan |  |
-| P4.3 | "Row and column counts match the publisher's, or the record explains the difference." | todo |  | agent |  |
-| P4.4 | "If you joined tables, the row count after the join equals the count you predicted." | todo |  | agent |  |
+| P4.1 | "A person with only your repository can obtain the same raw file you have, and the checksum proves it is the same." | met | documentation/data_provenance.md (manual steps) + documentation/raw_file_checksums.csv + scripts/01_verify_raw.R | agent | Raw files are not in the repository (site terms); a reader downloads them by hand and the script proves they are the same |
+| P4.2 | "The provenance record has no field marked UNVERIFIED. You resolved each one yourself." | at risk | documentation/data_provenance.md | Brennan | 3 fields still UNVERIFIED (version, citation form, re-opening the quoted pages). Brennan has to settle each one himself |
+| P4.3 | "Row and column counts match the publisher's, or the record explains the difference." | met | documentation/data_provenance.md: the publisher states no row count; internal check passes in all 132 sheet-months (audit, problem 23) | agent | The record explains that there is nothing to compare against |
+| P4.4 | "If you joined tables, the row count after the join equals the count you predicted." | met | No tables were joined | agent | Not applicable |
 
 ### Part 5. Clean the data and build the codebook
 
 | # | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|
-| P5.1 | "The row accounting closes: raw rows, less rows removed step by step, equals processed rows." | todo |  | agent |  |
-| P5.2 | "Every variable in the processed file has a codebook row, and no label reads UNDOCUMENTED." | todo |  | agent |  |
-| P5.3 | "The validation script passes." | todo |  | agent |  |
-| P5.4 | "You can give the reason for each row of the wrangling log without looking at it." | todo |  | Brennan |  |
+| P5.1 | "The row accounting closes: raw rows, less rows removed step by step, equals processed rows." | met | documentation/wrangling_log.md: 1,956 - 888 - 30 - 114 - 1 = 923; output/tables/validation_results.csv test 7 | agent |  |
+| P5.2 | "Every variable in the processed file has a codebook row, and no label reads UNDOCUMENTED." | in progress | documentation/codebook.md: 28 rows for 28 columns; no label reads UNDOCUMENTED | agent | Brennan still has to read every codebook row against the data |
+| P5.3 | "The validation script passes." | met | output/tables/validation_results.csv: 11 of 11 tests pass (run 2026-11-23) | agent |  |
+| P5.4 | "You can give the reason for each row of the wrangling log without looking at it." | todo |  | Brennan | Brennan: give the reason for each wrangling-log row without looking |
 
 ### Part 6. Explore
 
