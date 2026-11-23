@@ -1,0 +1,8 @@
+{
+  "operator_type": {"commercial": "#0072B2", "tribal": "#E69F00"},
+  "paid_no_tax": {"Paid no tax": "#D55E00", "Paid tax": "#999999"},
+  "flagged": {"Flagged month": "#000000", "Other months": "#999999"},
+  "single": {"main": "#0072B2", "accent": "#D55E00", "muted": "#999999"},
+  "diverging": {"negative": "#0072B2", "zero": "#FFFFFF", "positive": "#D55E00"},
+  "text": {"dark": "#222222", "grid": "#E5E5E5"}
+}

@@ -10,7 +10,8 @@ scripts <- c(
   "02_audit.R",         # audit the raw data (report only)
   "03_clean.R",         # carry out the approved cleaning plan; write the processed data and wrangling log
   "03b_codebook.R",     # write the codebook from the processed data
-  "04_validate.R"       # tests that guard the processed data
+  "04_validate.R",      # tests that guard the processed data
+  "06a_style_check.R"   # figure style: palette sample, palette file for the web page, color-vision check
 )
 
 started <- Sys.time()

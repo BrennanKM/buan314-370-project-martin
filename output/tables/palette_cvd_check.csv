@@ -1,0 +1,17 @@
+"palette","vision","colors","smallest_pair_distance"
+"operator_type","normal",2,120.4
+"operator_type","protan",2,109.5
+"operator_type","deutan",2,121.7
+"operator_type","tritan",2,79.5
+"paid_no_tax","normal",2,77.3
+"paid_no_tax","protan",2,55.9
+"paid_no_tax","deutan",2,62.8
+"paid_no_tax","tritan",2,72.7
+"flagged","normal",2,63.2
+"flagged","protan",2,63.2
+"flagged","deutan",2,63.2
+"flagged","tritan",2,63.2
+"single","normal",3,45
+"single","protan",3,40.8
+"single","deutan",3,49.1
+"single","tritan",3,32.9

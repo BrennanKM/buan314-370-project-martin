@@ -4,7 +4,7 @@ One row per rubric line, per item in the instructions' "Deliverables and submiss
 
 Status values: `todo` · `in progress` · `met` · `at risk`. Owner is who has to make it true.
 
-Last updated: 2026-11-23, end of session 1.
+Last updated: 2026-11-23, 14:35 PT.
 
 
 ## A. Rubric (project = 100%)
@@ -14,7 +14,7 @@ Last updated: 2026-11-23, end of session 1.
 | R1 | Problem framing | 10% | "Three statements with all five parts each; the descriptive one is answerable from the data; the predictive one names a numeric and a yes-or-no target; the prescriptive one names a decision. The wording is specific and the student's own." | at risk | documentation/proposal.md section 2 | Brennan (agent drafts and critiques) | Structure nearly there; wording is not Brennan's yet (O-001) |
 | R2 | Data source and provenance | 10% | "A primary, documented source that fits the question and meets the size, variable and correlation requirements; a scorecard backed by evidence; a provenance record from which a stranger could obtain the identical file." | in progress | documentation/proposal.md sections 3 to 5; documentation/data_provenance.md; documentation/raw_file_checksums.csv | agent (Brennan decides go / no-go) | Gate: go (D-016). 3 provenance fields UNVERIFIED |
 | R3 | Preparation and codebook | 10% | "Every cleaning step is a recorded decision with a reason and a row count; the accounting closes; the codebook is complete and checked against the data; tests pass." | in progress | documentation/cleaning_plan.md (17 decisions), wrangling_log.md, codebook.md, output/tables/validation_results.csv | agent (Brennan decides each step) | Codebook still to be read against the data by Brennan |
-| R4 | Exploratory analysis and prototyped visualizations | 15% | "Sub-questions trace to the problem statement; each has an answer with a number and its count; the correlation matrix is built and read correctly; interpretations weigh alternative explanations; six prototyped visualizations meet the standards, map each variable to a plot element that suits its type, and make their intended comparisons easy." | todo | | agent builds; Brennan interprets | |
+| R4 | Exploratory analysis and prototyped visualizations | 15% | "Sub-questions trace to the problem statement; each has an answer with a number and its count; the correlation matrix is built and read correctly; interpretations weigh alternative explanations; six prototyped visualizations meet the standards, map each variable to a plot element that suits its type, and make their intended comparisons easy." | in progress | documentation/eda_plan.md; scripts/00_style.R; output/tables/palette_cvd_check.csv | agent builds; Brennan interprets | Plan and figure style ready; analysis blocked on Brennan's expectations (O-007) |
 | R5 | Predictive models | 10% | "Linear regression applied to both sub-specifications, the regression problem and the classification problem (linear probability model), and no other method; predictors justified from the exploration; slopes interpreted in the right units; fit and classification reported plainly, including predictions outside 0 to 1; the limits of judging a model on its own data stated." | todo | | agent fits; Brennan chooses and interprets | |
 | R6 | Replication and version control | 10% | "A fresh copy reproduces every output from the README alone; the commit history shows the project being built over time; logs are complete." | in progress | scripts/run_all.R runs 5 scripts from a clean session in 7.9 seconds; renv.lock | agent | Fresh-copy test comes in Part 9 |
 | R7 | Static report | 10% | "Written for the decision-maker; organized by question; every number sourced; limitations stated plainly; no code; typeset in LaTeX and compiled in Overleaf." | todo | | Brennan writes; agent typesets; Brennan compiles | |
@@ -33,7 +33,7 @@ Last updated: 2026-11-23, end of session 1.
 | C5 | Framing and data | "Raw data in data/raw untouched, or a script that downloads them." | met | data/raw (not published) + documentation/data_provenance.md manual steps + scripts/01_verify_raw.R | agent | Neither the files nor a download script can be published under the site terms; manual steps with checksums take their place |
 | C6 | Framing and data | "Codebook with one row per variable and nothing marked UNDOCUMENTED." | in progress | documentation/codebook.md | agent + Brennan | Complete; Brennan's read-through owed |
 | C7 | Framing and data | "Wrangling log whose row accounting adds up; validation script passes." | met | documentation/wrangling_log.md; output/tables/validation_results.csv | agent |  |
-| C8 | Analysis, figures and models | "Exploration plan with 'what I expect' and 'what I found' filled in for every sub-question." | todo | | Brennan | |
+| C8 | Analysis, figures and models | "Exploration plan with 'what I expect' and 'what I found' filled in for every sub-question." | at risk | documentation/eda_plan.md | Brennan | "What I expect" is blank for all 12 rows (O-007) |
 | C9 | Analysis, figures and models | "Correlation matrix as a table and a heat map, showing at least weak to moderate correlation with each target." | todo | | agent | |
 | C10 | Analysis, figures and models | "At least six prototyped visualizations in four or more chart forms, made by scripts, meeting the figure standards, and used in both the LaTeX report and the slides." | todo | | agent | |
 | C11 | Analysis, figures and models | "The HTML report shows the same visualizations as the static report, rebuilt in CSS and JavaScript, with at least three interactive." | todo | | agent | |
@@ -114,7 +114,7 @@ Last updated: 2026-11-23, end of session 1.
 | # | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|
 | P6.1 | "Every sub-question in the plan has an answer with a number and the count behind it." | todo |  | agent |  |
-| P6.2 | "The 'what I found' column is in your words, and at least one row differs from 'what I expect,' or you can say why none does." | todo |  | Brennan |  |
+| P6.2 | "The 'what I found' column is in your words, and at least one row differs from 'what I expect,' or you can say why none does." | at risk | documentation/eda_plan.md: 12 sub-questions drafted | Brennan | Brennan answered "up to you" to the first four expectation questions; the assistant will not write them (O-007). No table is computed until he does |
 | P6.3 | "The correlation matrix is saved as a table and a heat map, and you can name the two or three variables most strongly related to each target." | todo |  | Brennan |  |
 | P6.4 | "You have picked the five or six findings that matter most to the decision-maker. These become your figures." | todo |  | Brennan |  |
 
