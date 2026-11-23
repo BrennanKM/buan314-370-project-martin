@@ -17,14 +17,16 @@ raw_dir     <- file.path("data", "raw")
 record_path <- file.path("documentation", "raw_file_checksums.csv")
 facts_path  <- file.path("output", "tables", "raw_file_facts.csv")
 
-# The six workbooks, under the names the publisher gives them.
+# The six workbooks, under the names a web browser gives them when saved
+# (macOS, 2026-11-23). Four of the names differ slightly from the
+# file names in the publisher's addresses, which use hyphens for the spaces.
 expected <- c(
-  "Internet_Sports_Betting_revenue_716520_7.xlsx",
-  "Internet_Sports_Betting_-_January_2022_748264_7.xlsx",
-  "Internet-Sports-Betting-January-2023.xlsx",
-  "Internet-Sports-Betting---2024.xlsx",
-  "Internet-Sports-Betting---2025.xlsx",
-  "Internet-Sports-Betting---2026.xlsx"
+  "Internet_Sports_Betting_revenue_716520_7.xlsx",           # 2021
+  "Internet_Sports_Betting_-_January_2022_748264_7.xlsx",    # 2022 (also carries 2021)
+  "Internet Sports Betting January 2023.xlsx",               # 2023 (also carries 2022)
+  "Internet Sports Betting - 2024.xlsx",                     # 2024 (also carries 2023)
+  "Internet Sports Betting - 2025.xlsx",                     # 2025 (also carries 2024)
+  "Internet Sports Betting - 2026.xlsx"                      # 2026 (also carries 2025)
 )
 
 missing <- expected[!file.exists(file.path(raw_dir, expected))]

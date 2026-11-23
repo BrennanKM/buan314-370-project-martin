@@ -57,7 +57,7 @@ Last updated: 2026-11-23, end of session 1.
 | # | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|
 | P0.1 | "The table from Prompt 0.1 shows every item installed." | met | Re-check 2026-11-23: git 2.54.0, R 4.6.1, RStudio 2026.09.0; in the project library: renv 1.3.1, tidyverse 2.0.0, janitor 2.2.1, plotly 4.12.1 (scratch install log; prompt log 2 and 4) | agent | Packages live in the project's renv library, not the global library (D-007) |
-| P0.2 | "You can sign in to GitHub and to Overleaf in a browser, and both email addresses are confirmed." | in progress | GitHub: signed in as BrennanKM, repository created | Brennan | Overleaf account not created yet (O-003) |
+| P0.2 | "You can sign in to GitHub and to Overleaf in a browser, and both email addresses are confirmed." | in progress | GitHub: signed in as BrennanKM, repository created. Overleaf: account created, per Brennan 2026-11-23 | Brennan | Still to confirm: the Overleaf email address is confirmed |
 | P0.3 | "You have opened Claude Code on an empty test folder, asked it to create a text file, and found that file on your computer." | in progress | Claude Code created this repository's files on 2026-11-23 | Brennan | Brennan to confirm he can find README.md on his computer |
 
 ### Part 1. Frame the problem: one question, three problem statements
