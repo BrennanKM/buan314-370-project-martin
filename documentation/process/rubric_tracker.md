@@ -4,15 +4,15 @@ One row per rubric line, per item in the instructions' "Deliverables and submiss
 
 Status values: `todo` · `in progress` · `met` · `at risk`. Owner is who has to make it true.
 
-Last updated: 2026-11-23 (session 1).
+Last updated: 2026-11-23, end of session 1.
 
 
 ## A. Rubric (project = 100%)
 
 | # | Component | Weight | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|---|---|
-| R1 | Problem framing | 10% | "Three statements with all five parts each; the descriptive one is answerable from the data; the predictive one names a numeric and a yes-or-no target; the prescriptive one names a decision. The wording is specific and the student's own." | todo | | Brennan (agent drafts and critiques) | |
-| R2 | Data source and provenance | 10% | "A primary, documented source that fits the question and meets the size, variable and correlation requirements; a scorecard backed by evidence; a provenance record from which a stranger could obtain the identical file." | todo | | agent (Brennan decides go / no-go) | |
+| R1 | Problem framing | 10% | "Three statements with all five parts each; the descriptive one is answerable from the data; the predictive one names a numeric and a yes-or-no target; the prescriptive one names a decision. The wording is specific and the student's own." | at risk | documentation/proposal.md section 2 | Brennan (agent drafts and critiques) | Structure nearly there; wording is not Brennan's yet (O-001) |
+| R2 | Data source and provenance | 10% | "A primary, documented source that fits the question and meets the size, variable and correlation requirements; a scorecard backed by evidence; a provenance record from which a stranger could obtain the identical file." | in progress | documentation/proposal.md sections 3 to 5; documentation/data_provenance.md | agent (Brennan decides go / no-go) | Gate decided: go (D-016). Raw files not yet downloaded by Brennan |
 | R3 | Preparation and codebook | 10% | "Every cleaning step is a recorded decision with a reason and a row count; the accounting closes; the codebook is complete and checked against the data; tests pass." | todo | | agent (Brennan decides each step) | |
 | R4 | Exploratory analysis and prototyped visualizations | 15% | "Sub-questions trace to the problem statement; each has an answer with a number and its count; the correlation matrix is built and read correctly; interpretations weigh alternative explanations; six prototyped visualizations meet the standards, map each variable to a plot element that suits its type, and make their intended comparisons easy." | todo | | agent builds; Brennan interprets | |
 | R5 | Predictive models | 10% | "Linear regression applied to both sub-specifications, the regression problem and the classification problem (linear probability model), and no other method; predictors justified from the exploration; slopes interpreted in the right units; fit and classification reported plainly, including predictions outside 0 to 1; the limits of judging a model on its own data stated." | todo | | agent fits; Brennan chooses and interprets | |
@@ -27,7 +27,7 @@ Last updated: 2026-11-23 (session 1).
 | # | Group | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|---|
 | C1 | Framing and data | "Three problem statements (descriptive, predictive, prescriptive) in my own words, in the README and both reports." | todo | | Brennan | |
-| C2 | Framing and data | "Viability scorecard with no fails, in documentation/proposal.md." | todo | | agent | |
+| C2 | Framing and data | "Viability scorecard with no fails, in documentation/proposal.md." | met | documentation/proposal.md section 5 | agent | 0 fails; 3 concerns |
 | C3 | Framing and data | "Data meet the requirements: about 500 observations or more (or the instructor's approval), at least three numeric and two categorical variables." | todo | | agent | |
 | C4 | Framing and data | "Provenance record complete, with nothing marked UNVERIFIED." | todo | | agent + Brennan | |
 | C5 | Framing and data | "Raw data in data/raw untouched, or a script that downloads them." | todo | | agent | |
@@ -56,40 +56,40 @@ Last updated: 2026-11-23 (session 1).
 
 | # | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|
-| P0.1 | "The table from Prompt 0.1 shows every item installed." | in progress | Check run 2026-11-23: git 2.54.0, R 4.6.1, RStudio 2026.09.0, tidyverse 2.0.0, plotly 4.12.1 installed; renv and janitor missing | agent | Install into the project library waits on Brennan's yes |
-| P0.2 | "You can sign in to GitHub and to Overleaf in a browser, and both email addresses are confirmed." | in progress | gh signed in as BrennanKM | Brennan | Overleaf account status not confirmed yet |
+| P0.1 | "The table from Prompt 0.1 shows every item installed." | met | Re-check 2026-11-23: git 2.54.0, R 4.6.1, RStudio 2026.09.0; in the project library: renv 1.3.1, tidyverse 2.0.0, janitor 2.2.1, plotly 4.12.1 (scratch install log; prompt log 2 and 4) | agent | Packages live in the project's renv library, not the global library (D-007) |
+| P0.2 | "You can sign in to GitHub and to Overleaf in a browser, and both email addresses are confirmed." | in progress | GitHub: signed in as BrennanKM, repository created | Brennan | Overleaf account not created yet (O-003) |
 | P0.3 | "You have opened Claude Code on an empty test folder, asked it to create a text file, and found that file on your computer." | in progress | Claude Code created this repository's files on 2026-11-23 | Brennan | Brennan to confirm he can find README.md on his computer |
 
 ### Part 1. Frame the problem: one question, three problem statements
 
 | # | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|
-| P1.1 | "Each statement names all five parts. The outcome measure has units." | todo |  | agent |  |
-| P1.2 | "The descriptive statement can be answered with summaries and charts alone." | todo |  | agent |  |
-| P1.3 | "The predictive statement has both sub-specifications, a regression problem (numeric target) and a classification problem (yes-or-no target), and names the moment of prediction. The prescriptive statement names a decision, an objective and a constraint." | todo |  | agent |  |
-| P1.4 | "All three are about the same decision-maker and could use the same data." | todo |  | agent |  |
+| P1.1 | "Each statement names all five parts. The outcome measure has units." | in progress | documentation/proposal.md section 2, five-part check | agent | Working drafts: two Value cells are empty |
+| P1.2 | "The descriptive statement can be answered with summaries and charts alone." | in progress | documentation/proposal.md section 2 | agent | Working draft only |
+| P1.3 | "The predictive statement has both sub-specifications, a regression problem (numeric target) and a classification problem (yes-or-no target), and names the moment of prediction. The prescriptive statement names a decision, an objective and a constraint." | in progress | documentation/proposal.md section 2; targets D-014, D-015 | agent | Working draft only; the prescriptive draft does not say who controls the cap |
+| P1.4 | "All three are about the same decision-maker and could use the same data." | in progress | documentation/proposal.md section 2 | agent | Same decision-maker and data in all three drafts |
 | P1.5 | "You can say the descriptive statement aloud in 20 seconds, and a classmate can tell you what one row of the ideal data set is." | todo |  | Brennan |  |
-| P1.6 | "The final wording is yours." | todo |  | Brennan |  |
+| P1.6 | "The final wording is yours." | at risk | questions_log Q-018 to Q-020 | Brennan | The three statements are the assistant's draft A, selected unchanged. Brennan's rewrite is owed (O-001) |
 
 ### Part 2. Find a viable data source
 
 | # | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|
-| P2.1 | "The scorecard has no fails, and each concern has a stated resolution." | todo |  | agent |  |
-| P2.2 | "You downloaded the file yourself and can state from memory: what one row is, the period covered, and the number of rows and columns." | todo |  | Brennan |  |
-| P2.3 | "The data have about 500 observations or more, or you have the instructor's approval, with at least three numeric and at least two categorical variables." | todo |  | agent |  |
-| P2.4 | "The correlation matrix shows at least weak to moderate correlation with each of your two targets." | todo |  | agent |  |
-| P2.5 | "Your three problem statements have been revised to match what the data contain." | todo |  | agent |  |
-| P2.6 | "The statements and the scorecard are saved as your proposal (Milestone 1)." | todo |  | agent |  |
+| P2.1 | "The scorecard has no fails, and each concern has a stated resolution." | met | documentation/proposal.md section 5: 8 pass, 3 concern, 0 fail; each concern has a resolution | agent | License stays a concern with nothing in writing (D-016) |
+| P2.2 | "You downloaded the file yourself and can state from memory: what one row is, the period covered, and the number of rows and columns." | at risk |  | Brennan | Brennan has not downloaded a file yet (O-002) |
+| P2.3 | "The data have about 500 observations or more, or you have the instructor's approval, with at least three numeric and at least two categorical variables." | in progress | documentation/proposal.md section 4: 923 active rows, 4 numeric, 5 categorical | agent | From screening copies; to be confirmed on the hand-downloaded files |
+| P2.4 | "The correlation matrix shows at least weak to moderate correlation with each of your two targets." | in progress | documentation/proposal.md section 4: r = 0.59 and r = -0.46 with the two targets | agent | From screening copies; to be confirmed on the hand-downloaded files |
+| P2.5 | "Your three problem statements have been revised to match what the data contain." | in progress | documentation/proposal.md sections 1, 2 and 6 | agent | Drafts match the data; wording not yet Brennan's |
+| P2.6 | "The statements and the scorecard are saved as your proposal (Milestone 1)." | in progress | documentation/proposal.md | agent | Milestone 1 not final until O-001, O-002 and O-004 are closed |
 
 ### Part 3. Set up the workspace and GitHub
 
 | # | Requirement (quoted) | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|
-| P3.1 | "Your repository opens in a browser and shows the README and the folder layout." | todo |  | agent |  |
-| P3.2 | "CLAUDE.md is in the project folder, and after your next prompt the prompt log gained an entry without your asking." | todo |  | agent |  |
-| P3.3 | "Your proposal from Parts 1 and 2 is in documentation/proposal.md." | todo |  | agent |  |
-| P3.4 | "From now on the commit history shows work arriving session by session. One upload at the end is not version control." | todo |  | agent |  |
+| P3.1 | "Your repository opens in a browser and shows the README and the folder layout." | met | https://github.com/BrennanKM/buan314-370-project-martin (public; commit ffdf9cc pushed 2026-11-23) | agent |  |
+| P3.2 | "CLAUDE.md is in the project folder, and after your next prompt the prompt log gained an entry without your asking." | met | CLAUDE.md; documentation/prompt_log.md entries 1 to 20 written as the work happened | agent |  |
+| P3.3 | "Your proposal from Parts 1 and 2 is in documentation/proposal.md." | in progress | documentation/proposal.md | agent | In place, not final |
+| P3.4 | "From now on the commit history shows work arriving session by session. One upload at the end is not version control." | in progress | git log: commits on 2026-11-23 | agent | Must continue every working session to 12-01 |
 
 ### Part 4. Collect the data and record its provenance
 
@@ -191,8 +191,8 @@ Last updated: 2026-11-23 (session 1).
 
 | # | Requirement | Status | Evidence | Owner | Notes |
 |---|---|---|---|---|---|
-| N1 | Commits pushed in every working session, from 2026-11-23 to 2026-12-01 | todo | | agent | |
-| N2 | Prompt log covers every part, including each loop back from Part 2 | todo | | agent | |
+| N1 | Commits pushed in every working session, from 2026-11-23 to 2026-12-01 | in progress | 4 commits pushed 2026-11-23 | agent |  |
+| N2 | Prompt log covers every part, including each loop back from Part 2 | in progress | documentation/prompt_log.md entries 1 to 20, including three loops (16 to 18) | agent |  |
 | N3 | Fresh-copy test passed | todo | | agent | |
 | N4 | Both number audits (static report, HTML page) return empty lists | todo | | agent | |
 | N5 | Recording length between 18 and 22 minutes | todo | | Brennan | |

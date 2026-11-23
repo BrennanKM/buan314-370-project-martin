@@ -1,3 +1,8 @@
+# The State of Michigan's workbooks: its site terms do not allow republishing (decision D-011).
+# They are downloaded by hand; see documentation/data_provenance.md.
+data/raw/*.xlsx
+data/raw/*.xls
+
 # Course materials and kickoff notes: not ours to publish
 reference/
 _kickoff/

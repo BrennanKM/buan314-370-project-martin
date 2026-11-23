@@ -1,6 +1,6 @@
 # Proposal: three problem statements and the viability scorecard
 
-Milestone 1 (Parts 1 and 2 of the course instructions). Status on 2026-11-23: question, decision-maker and both targets chosen by Brennan; statements are still the assistant's working drafts; scorecard filled in from a read-only screen; **the go / rescope / no-go decision is Brennan's and is pending**.
+Milestone 1 (Parts 1 and 2 of the course instructions). Status on 2026-11-23: question, decision-maker and both targets chosen by Brennan; statements are still the assistant's working drafts; scorecard filled in from a read-only screen; **Brennan's decision: go** (section 5).
 
 ## 1. Research question and decision-maker
 
@@ -118,7 +118,7 @@ Score each line pass, concern or fail, with evidence. One fail means the source 
 
 **Recommendation (assistant): go, with three concerns to resolve (Access, License, Documentation). No line is scored fail, but License is the one a strict reader could fail.**
 
-**Decision (Brennan):** *pending*
+**Decision (Brennan, 2026-11-23): GO**, without outreach ("Go, but no emails"). Hand downloads; the State's files stay out of the repository; click steps and checksums are published instead. The License and Documentation lines remain concerns (decision D-016).
 
 ## 6. Loops back from the data gate
 
