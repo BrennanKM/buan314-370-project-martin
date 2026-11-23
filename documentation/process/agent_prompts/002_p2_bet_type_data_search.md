@@ -18,4 +18,4 @@ Search the web for publicly downloadable data sets from US state gaming regulato
 For each candidate, give the title and publisher name a person should see when they open the link, so the student can confirm the page exists and matches your description. State plainly, for the best candidate, whether a file with operator-by-month-by-bet-type rows can actually be downloaded in table form, and how you know.
 
 ---
-Result: *(added when the subagent returns)*
+Result (returned 2026-11-23 13:47): **Checkpoint not passed: the best candidate is unconfirmed.** Six regulator sources listed. Only the Illinois Gaming Board appears to offer operator-by-month data with a parlay category as CSV, but the file sits behind a report form the subagent was not allowed to submit, so the column layout was not seen. No license and no data dictionary found on the Illinois page. Maryland, Colorado, Indiana, Louisiana and Mississippi report parlays statewide only, or without revenue, or as PDF. Several descriptions rest on search-result snippets or trade press, labelled as such; Colorado's site returned HTTP 403.
