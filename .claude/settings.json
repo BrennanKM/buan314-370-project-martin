@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(~/Developer/**)",
+      "Edit(~/Developer/**)",
+      "Read(~/Documents/GitHub/**)",
+      "Edit(~/Documents/GitHub/**)",
+      "Bash(git push *--force*)",
+      "Bash(git push -f*)",
+      "Bash(git push * -f*)"
+    ]
+  }
+}

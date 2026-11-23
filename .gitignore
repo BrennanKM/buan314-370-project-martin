@@ -1,0 +1,59 @@
+# Course materials and kickoff notes: not ours to publish
+reference/
+_kickoff/
+
+# Quick trials (course rule: scratch is never a deliverable)
+scratch/
+
+# Operating-system and editor clutter
+.DS_Store
+Thumbs.db
+*~
+*.swp
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Secrets: never commit passwords, keys or tokens
+.env
+.env.*
+.Renviron
+*.pem
+*.key
+*credentials*
+*secret*
+
+# renv: keep the lockfile and activate script, not the installed library
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/sandbox/
+renv/staging/
+
+# LaTeX leftovers from a local compile (the PDF itself is committed in report/)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.toc
+*.synctex.gz
+report/static/*.log
+
+# Claude Code: local-only files and agent worktrees
+.claude/settings.local.json
+.claude/worktrees/
+
+# Files GitHub would warn about or reject (over 50 MB): video and archives
+*.mp4
+*.mov
+*.m4v
+*.zip
+!report/static/*.zip
