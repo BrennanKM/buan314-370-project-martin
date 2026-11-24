@@ -20,7 +20,7 @@ How to read it: a number that comes from the analysis is never typed. The static
 
 ## The web page as one file
 
-- Size: 129,825 bytes.
+- Size: 129,912 bytes.
 - Things the page loads from outside itself: none.
 - Report figures with no chart in the page: none (all 9 are drawn by the page's own JavaScript; the page contains no image).
 - Figure titles not used in the page: none (all 9 titles are the same strings the figure scripts use).

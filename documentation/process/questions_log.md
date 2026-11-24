@@ -80,3 +80,4 @@ Every question the assistant put to Brennan, with the options offered and his an
 | Q-072 | 2026-11-24, by 11:33 | "What I found", sub-question 4 (which operators deducted the most free play per $100). Same form. | Matched my guess · Partly matched · Did not match (verdict only; the question asked him to type his own sentence in Other) | "Something else" (no text; see Q-069) |
 | Q-073 | 2026-11-24 12:09 | Publish the web report with GitHub Pages now, draft notice included? | Yes, publish · Not yet | "Yes, publish" |
 | Q-074 | 2026-11-24 12:11 | Delete the 310 MB temporary folder left by the fresh-copy test? | Yes, delete it · Keep it | "Yes, delete it" |
+| Q-075 | 2026-11-24 12:31 | Should I download the compiled PDF from Overleaf and save it in the report folder? | Yes, download it · I'll do it | "Yes, download it" |

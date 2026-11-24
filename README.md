@@ -4,13 +4,13 @@
 
 **Brennan Martin** · BUAN 314-370, Descriptive Analytics & Data Management · Dr. Steven Levkoff · University of San Diego · Fall 2026
 
-> **Status, 2026-11-24:** data collected, audited, cleaned and tested; exploration, nine figures and both models done; both reports are built. **The wording of both reports, the figure titles and the problem statements is still the AI assistant's draft**, marked as such wherever it appears, until Brennan Martin has revised it. The static report has not been compiled yet. The interactive report is live at https://brennankm.github.io/buan314-370-project-martin/ and carries the same draft notice.
+> **Status, 2026-11-24:** data collected, audited, cleaned and tested; exploration, nine figures and both models done; both reports are built. **The wording of both reports, the figure titles and the problem statements is still the AI assistant's draft**, marked as such wherever it appears, until Brennan Martin has revised it. The static report was compiled in Overleaf on 2026-11-24 (23 pages) and carries a draft notice on every page. The interactive report is live at https://brennankm.github.io/buan314-370-project-martin/ and carries the same draft notice.
 
 ## Deliverables
 
 | Deliverable | Link |
 |---|---|
-| Static report (PDF, LaTeX compiled in Overleaf) | LaTeX source: [report/static](report/static). *PDF not yet compiled* |
+| Static report (PDF, LaTeX compiled in Overleaf) | [report/free_play_report_martin.pdf](report/free_play_report_martin.pdf) (LaTeX source: [report/static](report/static)) |
 | Interactive report (GitHub Pages) | **https://brennankm.github.io/buan314-370-project-martin/** (source: [docs/index.html](docs/index.html)) |
 | Recorded presentation | *not yet recorded* |
 | Slides (PDF) | *not yet built* |
