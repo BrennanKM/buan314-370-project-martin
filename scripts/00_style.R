@@ -37,6 +37,7 @@ theme_project <- function(base_size = 11) {
       plot.caption.position = "plot",
       legend.position    = "top",
       legend.justification = "left",
+      legend.location    = "plot",      # line the legend up with the title, not the panel
       legend.title       = element_text(size = rel(0.9)),
       strip.text         = element_text(face = "bold", hjust = 0)
     )
@@ -45,7 +46,7 @@ theme_project <- function(base_size = 11) {
 # Standard caption: the source and the number of rows shown.
 # Titles and captions are wrapped so nothing runs off a 6.5-inch figure.
 wrap_text <- function(x, width) paste(strwrap(x, width = width), collapse = "\n")
-wrap_title <- function(x, width = 60) wrap_text(x, width)
+wrap_title <- function(x, width = 68) wrap_text(x, width)
 caption_source <- function(n_rows, extra = NULL) {
   wrap_text(paste0("Source: Michigan Gaming Control Board, internet sports betting revenues and taxes, 2021 to 2026. ",
                    "Rows shown: ", formatC(n_rows, format = "d", big.mark = ","), " operator-months.",

@@ -1,0 +1,4 @@
+"Case","Prior month: free play per $100 wagered","Months active","Operator type","Prior month: paid no state tax","Prior month: dollars wagered","Prior month: size (log10 of dollars wagered)","Model 1: predicted free play per $100 wagered (dollars)","Model 2: predicted probability of paying no state tax","Model 2: called at the 0.5 cutoff","Reaches beyond the data?"
+"1. Large commercial sportsbook, four years in, paid tax last month",4,48,"commercial","no","100,000,000",8,3.81,0.0278,"pays tax (no)","No: every value is inside the range of the rows used"
+"2. Small tribal sportsbook, five years in, paid no tax last month",5,60,"tribal","yes","1,500,000",6.1761,3.78,0.9122,"no tax (yes)","No: every value is inside the range of the rows used"
+"3. Tribal sportsbook in its fourth month, heavy free play, paid no tax last month",9,4,"tribal","yes","3,000,000",6.4771,7.58,0.8889,"no tax (yes)","No: every value is inside the range of the rows used"

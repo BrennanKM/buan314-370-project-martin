@@ -185,7 +185,8 @@ p12 <- ggplot(hm, aes(x, y, fill = Freq)) + geom_tile(colour = "white", linewidt
   scale_fill_gradient2(low = project_colors$diverging[["negative"]], mid = project_colors$diverging[["zero"]], high = project_colors$diverging[["positive"]],
                        midpoint = 0, limits = c(-1, 1), name = "Correlation", na.value = "#F2F2F2") +
   scale_x_discrete(position = "top", labels = function(v) str_wrap(v, 16)) + scale_y_discrete(labels = function(v) str_wrap(v, 30)) +
-  labs(title = wrap_title("Correlation matrix of the two targets and the variables known beforehand", 70),
+  # Title: a finding, in the AI assistant's draft wording (assistant_drafts.md, section B); Brennan keeps or changes it.
+  labs(title = wrap_title("Among things known before the month starts, each target is most closely tied to its own value the month before (0.59 and 0.79)", 74),
        subtitle = "Straight-line correlation, -1 to 1; orange is positive, blue is negative",
        x = NULL, y = NULL,
        caption = paste0("Source: Michigan Gaming Control Board, internet sports betting revenues and taxes, 2021 to 2026.\nRows used per pair: ", n_min, " to ", n_max,
