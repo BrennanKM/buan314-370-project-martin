@@ -1,0 +1,5 @@
+"Term","Label","Estimate","Standard error","t value","p value"
+"(Intercept)","Intercept (a tribal operator with every numeric predictor at zero)",0.653152555485942,0.108501817933166,6.0197383594832,2.53920674232149e-09
+"prior_paid_no_tax","Prior month: paid no state tax (1 = yes, 0 = no)",0.735320300551269,0.0221556352648084,33.1888610623248,1.75723795800374e-158
+"prior_log10_handle","Prior month: size (log10 of dollars wagered)",-0.0771235990757536,0.0155742409775277,-4.95199728751059,8.76712232787939e-07
+"commercial","Commercial operator (1 = commercial, 0 = tribal)",-0.00837885486034195,0.0288851949885152,-0.290074374213967,0.771826010289379

@@ -1,0 +1,5 @@
+"Term","Label","Estimate","Standard error","t value","p value"
+"(Intercept)","Intercept (a tribal operator with every numeric predictor at zero)",3.2356006215668,0.42713494534179,7.57512504386101,8.93200822086503e-14
+"prior_free_play_per_100","Prior month: free play per $100 wagered",0.497543164757031,0.0242745385603794,20.4965035079643,7.31454347186079e-77
+"months_active","Months the operator has been active",-0.0323145398193486,0.00988332044740076,-3.26960357010858,0.00111803690200165
+"commercial","Commercial operator (1 = commercial, 0 = tribal)",0.130819721441368,0.435379363033727,0.300472949681893,0.763886129037684

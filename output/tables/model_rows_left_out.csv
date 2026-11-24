@@ -1,0 +1,5 @@
+"Model","Why the row was left out","Rows"
+"model1","Missing value of free_play_per_100 (set to missing in cleaning steps 6 or 8)",3
+"model1","Missing value of prior_free_play_per_100 (set to missing in cleaning steps 6 or 8)",3
+"model1","No prior month in the data for this operator (first active month, or first month after a pause)",17
+"model2","No prior month in the data for this operator (first active month, or first month after a pause)",17

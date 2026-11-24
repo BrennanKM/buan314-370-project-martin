@@ -13,7 +13,8 @@ scripts <- c(
   "04_validate.R",      # tests that guard the processed data
   "05_eda.R",           # one summary table per exploration sub-question; correlation matrix and heat map
   "06a_style_check.R",  # figure style: palette sample, palette file for the web page, color-vision check
-  "07a_model_plan.R"    # evidence for choosing predictors (fits nothing)
+  "07a_model_plan.R",   # evidence for choosing predictors (fits nothing)
+  "07_models.R"         # the two linear regressions: estimates, fit, classification table, figures
 )
 
 started <- Sys.time()

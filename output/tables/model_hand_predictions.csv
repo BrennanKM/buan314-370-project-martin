@@ -1,0 +1,7 @@
+"Model","Operator","Month","Predictor values","Step by step","Prediction by hand","Prediction from the script","Actual"
+"model1","Bay Mills","2026-01-01","prior_free_play_per_100 = 2.2192; months_active = 61.0000; commercial = 0.0000","3.2356 + 0.4975 x 2.2192 - 0.0323 x 61.0000 + 0.1308 x 0.0000 = 2.3685",2.3685,2.3685,3.1478
+"model1","Keweenaw Bay","2021-02-01","prior_free_play_per_100 = 16.8112; months_active = 2.0000; commercial = 0.0000","3.2356 + 0.4975 x 16.8112 - 0.0323 x 2.0000 + 0.1308 x 0.0000 = 11.5352",11.5352,11.5352,16.3616
+"model1","Lac Vieux Desert","2022-04-01","prior_free_play_per_100 = 5.5201; months_active = 16.0000; commercial = 0.0000","3.2356 + 0.4975 x 5.5201 - 0.0323 x 16.0000 + 0.1308 x 0.0000 = 5.4651",5.4651,5.4651,5.2591
+"model2","Lac Vieux Desert","2022-07-01","prior_paid_no_tax = 1.0000; prior_log10_handle = 6.8428; commercial = 0.0000","0.6532 + 0.7353 x 1.0000 - 0.0771 x 6.8428 - 0.0084 x 0.0000 = 0.8607",0.8607,0.8607,1
+"model2","Lac Vieux Desert","2025-03-01","prior_paid_no_tax = 1.0000; prior_log10_handle = 7.3936; commercial = 0.0000","0.6532 + 0.7353 x 1.0000 - 0.0771 x 7.3936 - 0.0084 x 0.0000 = 0.8182",0.8182,0.8182,1
+"model2","Lac Vieux Desert","2025-07-01","prior_paid_no_tax = 0.000; prior_log10_handle = 7.419; commercial = 0.000","0.6532 + 0.7353 x 0.000 - 0.0771 x 7.419 - 0.0084 x 0.000 = 0.0810",0.081,0.081,0

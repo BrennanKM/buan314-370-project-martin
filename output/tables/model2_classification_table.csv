@@ -1,0 +1,4 @@
+" ","Predicted yes (0.5 or more)","Predicted no (under 0.5)","Total"
+"Actual: paid no tax (yes)",394,43,437
+"Actual: paid tax (no)",50,419,469
+"Total",444,462,906

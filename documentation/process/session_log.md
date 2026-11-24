@@ -66,3 +66,26 @@ O-001 rewrite the three problem statements · O-004 open the five shortlist link
 **Phase 3, collecting the data.** I downloaded six Excel workbooks by hand from the Michigan Gaming Control Board's page, one per year from 2021 to 2026, because the State's site terms do not allow scripted downloads. A script takes a fingerprint (checksum) of each file and stops everything if a file ever differs, so anyone who repeats my download can prove they have the same files. The State's files are not in my public repository because the same terms do not allow reposting; the repository carries the click steps and the fingerprints instead. The publisher gives no row count, so I checked the files against themselves: in all 132 sheet-months the operators add up to the publisher's own total. Rows changed: none; the raw files are never edited.
 
 **Phase 4, cleaning.** The workbooks are laid out sideways, four columns per sportsbook, so the first step turns them into one row per sportsbook per month: 1,956 cells. Each year appears in two workbooks and the copies agree, so I kept the newest copy (1,068 rows). I dropped 30 rows for two months not yet reported, 114 rows where a sportsbook took no bets at all, and 1 row with a negative amount wagered, leaving 923. I did not delete any row for being extreme: two tiny months and two months with a negative deduction keep their rows but have the rates blanked, and 21 months with a lump deduction and 15 partial first months are flagged, not removed. Every decision was mine, is logged with its row count, and the accounting closes: 1,956 - 888 - 30 - 114 - 1 = 923.
+
+## Session 1, third stretch: Mon 2026-11-23, 16:00 to 16:14 PT
+
+### What changed
+- Brennan asked for the open questions again with recommendations. For the 12 expectations the assistant gave no recommended option (told him his real guess is the only good answer) and he picked all 12. Committed at 16:03, before any table existed.
+- Four content decisions for the problem statements (with recommendations): what the estimates are for, who sets the cap, the constraint, the objective. Working drafts updated to version 2; wording still the assistant's.
+- Exploration computed: 21 tables for the 12 sub-questions, the correlation matrix and its heat map.
+- Predictor evidence table; Brennan chose three predictors per model and picked six expected slope directions (no recommendation). Committed at 16:12, before fitting.
+- Both models fitted and reported; three model figures. Master script now runs 9 scripts in about 10 seconds.
+
+### Commits
+4832d34 (expectations), cf3476f (exploration and predictor evidence), a7507c7 (predictors and expected directions), plus the end-of-stretch commit.
+
+### Open items (details in `open_questions.md`)
+O-001 statements in his own words · O-004 open the five links · O-005 three UNVERIFIED provenance fields · O-006 read the codebook · **O-008 "what I found" and the top five or six findings** · **O-009 model interpretation and three cases**.
+
+### Plain-English explanations (study notes for the talk)
+
+*Written by the AI assistant as study notes for Brennan, in the first person so he can rehearse from them. They are not his authored text and are not used in any deliverable. They describe method only; what the results mean is for Brennan to write.*
+
+**Phase 5 and 6, exploring.** Before anything was computed I wrote down what I expected for each of 12 sub-questions, so the results could surprise me. A script then built one summary table per sub-question, always showing how many rows sit behind each median or percentage, and flagging any group with fewer than 30 rows. It also built a correlation matrix: a grid showing, for every pair of variables, how closely they move together in a straight line, from -1 to 1. A correlation says two things move together; it does not say one causes the other. Rows changed: none; exploring only reads the cleaned data (923 rows).
+
+**Phase 6, the two models.** Both models are ordinary linear regressions fitted on every row that has all the needed values. Model 1 predicts free play per $100 wagered from last month's free play, how long the sportsbook has been active, and whether it is commercial or tribal; it used 900 rows (23 left out, 17 of them because there is no prior month). Model 2 predicts whether a sportsbook pays no state tax, coded 1 for yes, from whether it paid none last month, its size last month, and its type; a regression on a yes-or-no target is called a linear probability model and its prediction is read as a probability. It used 906 rows. I chose only predictors that are known at the start of the month, and I recorded the direction I expected for each slope before fitting. Both models were judged on the same rows they were fitted to, so they will look better here than they would on new months.
