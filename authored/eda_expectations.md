@@ -1,61 +1,30 @@
 # What I expect
 
-Written by Brennan Martin, **before** any exploration table or model is run.
+Picked by Brennan Martin on 2026-11-23, **before** any exploration table, correlation matrix, figure or model was computed (the commit that adds this file comes before the commit that adds the first exploration table).
 
-How to fill this in: one sentence per sub-question saying what you expect to see and, if you can, why. There are no right answers. A guess that turns out wrong is the most useful thing this step can produce. The AI assistant does not write or suggest these; it only records them. The sub-questions are in `documentation/eda_plan.md`.
+How these were collected, stated plainly: the AI assistant asked each question with three or four possible answers and no recommended option. Each option carried a one-line reason someone might hold it; those reasons were written by the assistant, not by Brennan. The answer recorded for each question is the option Brennan picked, word for word. He had first answered "up to you"; the assistant declined to choose for him and asked again.
 
-Some screening numbers from the data gate were visible before this was written (free play per $100 by year, share kept by operator type, the two targets' correlations, and that 48.6% of months had no tax paid). Where you had already seen the number, say so and write what you would have guessed.
+A few screening numbers from the data gate had been shown before this: the two targets' correlations (including r = 0.59 with the prior month), that 48.6% of months had no tax paid, and medians by year and by operator type in a file the assistant wrote. Questions 2 and 12 therefore asked what he would have guessed before seeing the number.
 
-## Exploration sub-questions
+| # | Sub-question | Brennan's pick | Options offered |
+|---|---|---|---|
+| 1 | How is free play per $100 wagered spread across all sportsbook-months? | **Two clusters** | Bunched low, long tail · Evenly spread · Two clusters |
+| 2 | In what share of sportsbook-months was no state tax paid? (what he would have guessed before seeing the screening number, 48.6%) | **Under 10%** | Under 10% · About a quarter · About half · Well over half |
+| 3 | How much of all dollars wagered do the three biggest operators account for? | **50% to 70%** | Under half · 50% to 70% · 70% to 85% · Over 85% |
+| 4 | Which operators deducted the most free play per $100 wagered: big national brands or smaller operators? | **Big brands more** | Small operators more · About the same · Big brands more |
+| 5 | From 2021 to 2026, did free play per $100 wagered fall, hold steady or rise? | **Rose** | Fell · Held steady · Rose |
+| 6 | Is free play per $100 wagered higher for commercial or tribal operators? | **Commercial higher** | Commercial higher · About the same · Tribal higher |
+| 7 | Do bigger months of wagering go with more or less free play per $100? | **More in bigger months** | More in bigger months · No clear link · Less in bigger months |
+| 8 | Is a month with no state tax paid more common among tribal or commercial operators? | **More common for tribal** | More common for tribal · About the same · More common for commercial |
+| 9 | From 2021 to 2026, how did the share of sportsbooks paying no state tax change, for commercial and tribal operators? | **Rose** | Fell for both types · Fell for tribal only · Stayed about the same · Rose |
+| 10 | As a sportsbook gets older, what happens to its free play per $100 wagered? | **High at launch, then drops fast** | High at launch, then drops fast · Declines slowly over years · No pattern with age · Rises with age |
+| 11 | If the 21 lump-deduction months and the 15 partial first months are set aside, how much do the main answers change? | **Not at all** | A lot · A little · Not at all |
+| 12 | Which is most strongly related to a sportsbook's free play per $100 this month? (what he would have guessed before seeing r = 0.59 for last month's value) | **Size of the sportsbook** | Last month's free play · Size of the sportsbook · Age of the sportsbook · Operator type |
 
-1. How is free play per $100 wagered spread across all sportsbook-months? (bunched low with a few extreme months, evenly spread, two clusters, something else)
+## In my own words (optional, Brennan)
 
-   I expect:
-
-2. In what share of sportsbook-months was no state tax paid? (what you would have guessed before seeing 48.6%)
-
-   I expected:
-
-3. How much of all dollars wagered goes through the three biggest operators?
-
-   I expect:
-
-4. Which operators deducted the most free play per $100 wagered: the big national brands or the smaller operators?
-
-   I expect:
-
-5. Did free play per $100 wagered fall, hold or rise from 2021 to 2026?
-
-   I expect:
-
-6. Is free play per $100 wagered higher for commercial (Detroit casino) operators or tribal operators?
-
-   I expect:
-
-7. Do bigger months of wagering go with more or less free play per $100?
-
-   I expect:
-
-8. Is paying no state tax more common among tribal or commercial operators?
-
-   I expect:
-
-9. Did the share of sportsbooks paying no tax change from year to year, and the same way for both operator types?
-
-   I expect:
-
-10. Does a sportsbook's free play per $100 change as it gets older, and is that true for both operator types?
-
-    I expect:
-
-11. If the 21 lump-deduction months and the 15 first months are set aside, will the answers above change a lot, a little or not at all?
-
-    I expect:
-
-12. Which variable will be most strongly related to this month's free play per $100, and which to paying no tax?
-
-    I expect:
+*A sentence on why I expected each of these can be added here by Brennan. The assistant does not write it.*
 
 ## Model slopes (filled in after the predictors are chosen, before any model is fitted)
 
-*(One sentence per predictor: why it should matter, and in which direction.)*
+*(One line per predictor: the direction Brennan expects.)*
