@@ -2,6 +2,7 @@
 
 The predictive statement asks for two estimates at the start of a month. Both models here are ordinary linear regressions fitted to every row that has the needed values, and both are judged on those same rows. Each uses three predictors I chose from the correlation matrix, all known before the month starts. I recorded the direction I expected for each slope before either model was fitted.
 
+\FloatBarrier
 \subsection*{The regression problem: free play per \$100 wagered}
 
 \textbf{Target and predictors.} The target is free play deducted per \$100 wagered. The predictors are last month's free play per \$100 (the strongest correlation, \V{r_fp_prior}), the number of months the sportsbook has been active (\V{r_fp_months}), and operator type, which enters as 1 for a commercial sportsbook and 0 for a tribal one.
@@ -11,7 +12,7 @@ The predictive statement asks for two estimates at the start of a month. Both mo
 free play per \$100 $=$ \V{m1_b0} $+$ \V{m1_b1} $\times$ (last month's free play per \$100) $-$ \V{m1_b2} $\times$ (months active) $+$ \V{m1_b3} $\times$ (commercial)
 \end{center}
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering\small
 \caption{Model 1 estimates (\V{m1_rows} sportsbook-months). Source: output/tables/model1\_estimates.}\label{tab:m1}
 \input{tables/model1_estimates}
@@ -21,18 +22,19 @@ free play per \$100 $=$ \V{m1_b0} $+$ \V{m1_b1} $\times$ (last month's free play
 
 \textbf{Fit.} The model accounts for \V{m1_r2_pct}\% of the differences in free play per \$100 (R-squared \V{m1_r2}). Its typical miss, the root mean squared error, is \$\V{m1_rmse} per \$100, which is large beside a median of \$\V{fp_median}. A few months drive that figure. Figure~\ref{fig:m1a} and Figure~\ref{fig:m1b} show that \V{m1_within5_n} of the \V{m1_rows} predictions (\V{m1_within5_pct}\%) land within \$\V{def_within}, while \V{m1_above10} months came in more than \$\V{def_big_miss} above the prediction, the largest by \$\V{m1_largest_miss}; \V{m1_above10_lump} of those \V{m1_above10} are flagged lump-deduction months. \V{m1_left_out} rows were left out: \V{m1_no_prior} because the sportsbook has no month before it in the data and \V{m1_missing_value} because this month's or last month's free play value is blank.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.74\linewidth]{figures/fig_m1_predicted_vs_actual.pdf}
+\includegraphics[width=0.55\linewidth]{figures/fig_m1_predicted_vs_actual.pdf}
 \caption{Model 1: predicted against actual free play per \$100 wagered. Source: Michigan Gaming Control Board; \V{m1_rows} sportsbook-months, the rows used to fit.}\label{fig:m1a}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.92\linewidth]{figures/fig_m1_errors_vs_predicted.pdf}
+\includegraphics[width=0.75\linewidth]{figures/fig_m1_errors_vs_predicted.pdf}
 \caption{Model 1: prediction errors against predicted values. Source: Michigan Gaming Control Board; \V{m1_rows} sportsbook-months, the rows used to fit.}\label{fig:m1b}
 \end{figure}
 
+\FloatBarrier
 \subsection*{The classification problem: paying no state tax}
 
 \textbf{Target and predictors.} The target is 1 if the sportsbook paid no state tax or payment in the month and 0 if it paid something. A linear regression on a 0-and-1 target is a linear probability model, and its prediction is read as the probability of a yes. The predictors are whether the sportsbook paid no tax last month (\V{r_nt_prior}), the size of last month's wagering on a log scale, where one unit is a tenfold increase (\V{r_nt_priorsize}), and operator type.
@@ -42,7 +44,7 @@ free play per \$100 $=$ \V{m1_b0} $+$ \V{m1_b1} $\times$ (last month's free play
 probability of no tax $=$ \V{m2_b0} $+$ \V{m2_b1} $\times$ (paid no tax last month) $-$ \V{m2_b2} $\times$ (log of last month's dollars wagered) $-$ \V{m2_b3} $\times$ (commercial)
 \end{center}
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering\small
 \caption{Model 2 estimates (\V{m2_rows} sportsbook-months). Source: output/tables/model2\_estimates.}\label{tab:m2}
 \input{tables/model2_estimates}
@@ -52,26 +54,28 @@ probability of no tax $=$ \V{m2_b0} $+$ \V{m2_b1} $\times$ (paid no tax last mon
 
 \textbf{Fit.} R-squared is \V{m2_r2}. Calling a prediction of \V{def_cutoff} or more a yes, Table~\ref{tab:class} shows the model is right for \V{m2_correct_n} of \V{m2_rows} months (\V{m2_correct_pct}\%). Always guessing the more common outcome, that tax was paid, would be right \V{m2_baseline_pct}\% of the time. The model misses in both directions: \V{m2_no_yes} months it called no-tax paid tax, and \V{m2_yes_no} months it called tax-paying paid none. \V{m2_outside} predictions (\V{m2_outside_pct}\%) fall outside 0 to 1, \V{m2_below0} below 0 and \V{m2_above1} above 1, with a largest value of \V{m2_max}; they are reported as they are (Figure~\ref{fig:m2}). \V{m2_left_out} rows were left out because the sportsbook has no month before it in the data.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering\small
 \caption{Model 2: predicted against actual at the \V{def_cutoff} cutoff. Source: output/tables/model2\_classification\_table.}\label{tab:class}
 \input{tables/classification}
 \end{table}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.92\linewidth]{figures/fig_m2_predicted_probability.pdf}
+\includegraphics[width=0.75\linewidth]{figures/fig_m2_predicted_probability.pdf}
 \caption{Model 2: predicted probability of paying no state tax, shown separately for months that did and did not. Source: Michigan Gaming Control Board; \V{m2_rows} sportsbook-months, the rows used to fit.}\label{fig:m2}
 \end{figure}
 
+\FloatBarrier
 \subsection*{Three cases}
 
 Table~\ref{tab:cases} gives both predictions for three sportsbooks the Board might ask about. None of the values lies outside the range seen in the data. A large commercial sportsbook four years in is predicted to deduct \$\V{case1_m1} per \$100 and has a \V{case1_m2_pct}\% predicted probability of paying no tax. A small tribal sportsbook that paid no tax last month is predicted at \$\V{case2_m1} and \V{case2_m2_pct}\%. A tribal sportsbook in its fourth month with heavy free play is predicted at \$\V{case3_m1} and \V{case3_m2_pct}\%.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \caption{Scenario predictions from both models. Source: output/tables/model\_scenarios.}\label{tab:cases}
 \resizebox{\linewidth}{!}{\input{tables/scenarios}}
 \end{table}
 
 Both models describe association in these months, not cause. Fit was measured on the rows the models were fitted to, so these figures are a best case; on new months the models would probably do somewhat worse.
+\FloatBarrier

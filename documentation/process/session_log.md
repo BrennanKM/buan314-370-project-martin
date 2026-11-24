@@ -103,7 +103,7 @@ O-001 statements in his own words · O-004 open the five links · O-005 three UN
 - Fresh-copy test run twice (`documentation/fresh_copy_test.md`). First run: all 10 PNG figures differed, because the lockfile did not list the drawing package in use. Fixed. Second run: 92 files compared, none different (19 PDF figures differ only in the date stored inside them).
 
 ### Not done, and why
-- The static report has never been compiled: there is no LaTeX on this computer. Brennan compiles in Overleaf (O-010).
+- (Later the same session) The static report was compiled in Overleaf through Chrome, in Brennan's signed-in account: no errors on the first upload; three corrected uploads fixed a table that ran off the page and shortened the body from 19 to 16 pages. Final: 23 pages, 0 errors, 0 warnings. The PDF is not in `report/` yet (O-010).
 - (Later the same session) Brennan approved publishing. The page is live at https://brennankm.github.io/buan314-370-project-martin/ and is byte for byte the file in the repository. Still to try: a private window and a real phone.
 - No alternative-explanation check has been run (the course says to run them only when he asks).
 - The slides, the evidence tally for the postmortem and the final repeat of the fresh-copy test are still to come.

@@ -1,6 +1,6 @@
 \section{Codebook}
 
-One row per variable in the cleaned data (\V{rows_final} rows, \V{n_columns} columns). The complete codebook, with allowed values, observed ranges, where each variable comes from and how it was transformed, is \texttt{documentation/codebook.md} in the repository.
+One row per variable in the cleaned data (\V{rows_final} rows, \V{n_columns} columns). The complete codebook, with allowed values, observed ranges, where each variable comes from and how it was transformed, is \nolinkurl{documentation/codebook.md} in the repository.
 
 {\footnotesize
 \input{tables/codebook}
@@ -20,7 +20,7 @@ Every cleaning step in the order it ran, with the reason and the row count befor
 % taken from the project's prompt log and decision log. Brennan revises it at his final pass
 % so that it says, truthfully, what he wrote himself.
 
-This project was carried out with an AI coding assistant, Claude Code (model Claude Fable 5.2), working in the project folder under my direction. Every prompt and its result is recorded in \texttt{documentation/prompt\_log.md}, and every decision with who made it in \texttt{documentation/process/decision\_log.md}.
+This project was carried out with an AI coding assistant, Claude Code (model Claude Fable 5.2), working in the project folder under my direction. Every prompt and its result is recorded in \nolinkurl{documentation/prompt_log.md}, and every decision with who made it in \nolinkurl{documentation/process/decision_log.md}.
 
 \textbf{What the assistant did.} It wrote and ran all of the R code; audited the raw data; proposed the cleaning plan, the exploration sub-questions and the candidate predictors; built the tables, figures, both reports and the logs; and proofread by listing problems.
 
@@ -29,3 +29,25 @@ This project was carried out with an AI coding assistant, Claude Code (model Cla
 \textbf{The wording of this report.} \ifdraft The text of this draft was written by the AI assistant and is labeled as its draft in the repository. I have not yet revised it. \else [Brennan: state here which parts you rewrote and which you kept as drafted.] \fi
 
 \textbf{Checks on the assistant's work.} Each data step has a stated expected count that was compared with the result; \V{tests_run} tests guard the cleaned data; \V{hand_equal} of \V{hand_checks} hand-worked predictions equal the script's; and every number in this report is read from a results file by a script, not typed.
+
+\section{Detail tables}
+
+The three tables behind Figures~\ref{fig:share}, \ref{fig:operators}, \ref{fig:notax} and \ref{fig:heatmap}, referred to in Section~\ref{sec:eda}.
+
+\begin{table}[H]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Free play per \$100 wagered and share of all dollars wagered, by operator. Lower and Upper are the lower and upper quartiles, in dollars per \$100; Share is the share of all dollars wagered. Source: output/tables/eda\_03 and eda\_04.}\label{tab:operators}
+\input{tables/by_operator}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Months with no state tax paid, by year and operator type. Source: output/tables/eda\_09.}\label{tab:notax}
+\input{tables/no_tax_by_year}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Correlation of each target with the variables known before the month starts. Source: output/tables/eda\_12c.}\label{tab:corr}
+\input{tables/correlations_known}
+\end{table}

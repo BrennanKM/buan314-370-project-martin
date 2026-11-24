@@ -6,7 +6,7 @@ How to read it: a number that comes from the analysis is never typed. The static
 
 | Where | Numbers read from a results file | Typed, allowed (not results) | Mismatches | No source |
 |---|---|---|---|---|
-| Static report (`report/static/sections`) | 240 | 44 | 0 | 0 |
+| Static report (`report/static/sections`) | 240 | 45 | 0 | 0 |
 | Web page (`docs/index.html`) | 100 | 17 | 0 | 0 |
 | Figure titles (`documentation/figure_titles.csv`) | 22 | 9 | 0 | 0 |
 

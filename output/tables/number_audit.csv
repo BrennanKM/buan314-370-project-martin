@@ -283,6 +283,7 @@
 "10_appendices.tex","\V{hand_checks}","6","output/tables/model_hand_predictions.csv : number of rows","from a results file"
 "10_appendices.tex","typed: 16","16","a step number in the wrangling log (16a, 16b)","not a result (allowed)"
 "10_appendices.tex","typed: 5.2","5.2","name of the AI model (Claude Fable 5.2)","not a result (allowed)"
+"10_appendices.tex","typed: 100","100","the unit: free play per $100 wagered","not a result (allowed)"
 "title of fig01","typed: 1.90","1.90","fp_q1 = 1.90 (output/tables/eda_01_free_play_spread.csv)","matches a value on record"
 "title of fig01","typed: 5.53","5.53","fp_q3 = 5.53 (output/tables/eda_01_free_play_spread.csv)","matches a value on record"
 "title of fig01","typed: 100","100","a year, the $100 unit, or the name of the model","not a result (allowed)"

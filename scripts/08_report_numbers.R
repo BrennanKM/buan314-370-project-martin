@@ -206,15 +206,17 @@ writeLines(c("% Written by scripts/08_report_numbers.R. Do not edit by hand.",
              sprintf("\\expandafter\\def\\csname val@%s\\endcsname{%s}", num$key, esc(num$value))), file.path("report", "static", "numbers.tex"))
 
 # ---- LaTeX tables, built from the files in output/tables ----
+# Paragraph columns are set ragged-right: justified narrow columns pushed long words past the margin (Overleaf compile, 2026-11-24).
+ragged <- function(align) gsub("p{", ">{\\raggedright\\arraybackslash}p{", align, fixed = TRUE)
 tex_table <- function(df, file, align, head = names(df)) {
   body <- apply(df, 1, function(r) paste0(paste(esc(trimws(as.character(r))), collapse = " & "), " \\\\"))
-  writeLines(c("% Written by scripts/08_report_numbers.R from output/tables. Do not edit by hand.", paste0("\\begin{tabular}{", align, "}"), "\\toprule",
+  writeLines(c("% Written by scripts/08_report_numbers.R from output/tables. Do not edit by hand.", paste0("\\begin{tabular}{", ragged(align), "}"), "\\toprule",
                paste0(paste(esc(head), collapse = " & "), " \\\\"), "\\midrule", body, "\\bottomrule", "\\end{tabular}"), file.path("report", "static", "tables", file))
 }
 long_table <- function(df, file, align, head = names(df)) {
   body <- apply(df, 1, function(r) paste0(paste(esc(trimws(as.character(r))), collapse = " & "), " \\\\"))
   hl <- paste0(paste(sprintf("\\textbf{%s}", esc(head)), collapse = " & "), " \\\\")
-  writeLines(c("% Written by scripts/08_report_numbers.R. Do not edit by hand.", paste0("\\begin{longtable}{", align, "}"), "\\toprule", hl, "\\midrule", "\\endhead", "\\bottomrule", "\\endfoot", body, "\\end{longtable}"),
+  writeLines(c("% Written by scripts/08_report_numbers.R. Do not edit by hand.", paste0("\\begin{longtable}{", ragged(align), "}"), "\\toprule", hl, "\\midrule", "\\endhead", "\\bottomrule", "\\endfoot", body, "\\end{longtable}"),
              file.path("report", "static", "tables", file))
 }
 # Codebook rows (the codebook is itself written by 03b_codebook.R from the processed data)
@@ -225,16 +227,17 @@ if (nrow(cb) != 28) stop("Expected 28 codebook rows, found ", nrow(cb))
 key_vars <- c("operator", "operator_type", "month_date", "handle", "gross_receipts", "adjusted_gross_receipts", "state_tax_or_payment", "free_play_per_100", "paid_no_tax", "months_active", "lump_deduction", "first_active_month")
 kv <- cb[match(key_vars, cb$Name), c("Name", "Label", "Units")]
 tex_table(kv, "key_variables.tex", "@{}p{0.24\\linewidth}p{0.50\\linewidth}p{0.20\\linewidth}@{}", c("Variable", "What it is", "Units"))
-long_table(cb, "codebook.tex", "@{}p{0.23\\linewidth}p{0.36\\linewidth}p{0.11\\linewidth}p{0.13\\linewidth}p{0.10\\linewidth}@{}")
+long_table(cb, "codebook.tex", "@{}p{0.22\\linewidth}p{0.33\\linewidth}p{0.10\\linewidth}p{0.13\\linewidth}p{0.10\\linewidth}@{}")
 wl <- ws %>% transmute(Step = step, `What changed` = what_changed, Why = why, Before = i0(rows_before), After = i0(rows_after))
-long_table(wl, "wrangling_log.tex", "@{}p{0.05\\linewidth}p{0.40\\linewidth}p{0.33\\linewidth}p{0.07\\linewidth}p{0.07\\linewidth}@{}")
+long_table(wl, "wrangling_log.tex", "@{}p{0.05\\linewidth}p{0.38\\linewidth}p{0.31\\linewidth}rr@{}")
 tex_table(ws %>% filter(step %in% c("1", "2", "3", "4", "5")) %>% transmute(Step = step, `What was done` = sub("\\s*\\(.*$", "", what_changed), `Rows before` = i0(rows_before), `Rows after` = i0(rows_after)),
           "row_accounting.tex", "@{}p{0.07\\linewidth}p{0.61\\linewidth}rr@{}")
 e3 <- tb("eda_03_size_by_operator"); e4 <- tb("eda_04_free_play_by_operator")
 by_op <- e4 %>% left_join(e3[, c("Operator", "Share of all dollars wagered (percent)")], by = "Operator") %>%
   transmute(Operator, Brand = `Latest platform provider`, Type = `Operator type`, Months = `Months with a value`, `Lower quartile` = d2(`Lower quartile`), Median = d2(`Median free play per $100 wagered`),
             `Upper quartile` = d2(`Upper quartile`), `Share of wagering (%)` = d2(`Share of all dollars wagered (percent)`))
-tex_table(by_op, "by_operator.tex", "@{}p{0.21\\linewidth}p{0.20\\linewidth}lrrrrr@{}")
+# Short column heads so the table fits the page (first Overleaf compile, 2026-11-24: it ran 121pt past the margin); the caption spells them out.
+tex_table(by_op, "by_operator.tex", "@{}p{0.20\\linewidth}p{0.24\\linewidth}lrrrrr@{}", c("Operator", "Brand", "Type", "Months", "Lower", "Median", "Upper", "Share (%)"))
 e9 <- tb("eda_09_no_tax_by_year_and_type") %>% transmute(Year, `Operator type`, Months = `Months (rows)`, `Months with no tax` = `Months with no state tax paid`, `Share with no tax (%)` = d2(`Share with no state tax paid (percent)`))
 tex_table(e9, "no_tax_by_year.tex", "@{}llrrr@{}")
 e12 <- tb("eda_12c_correlations_with_each_target")

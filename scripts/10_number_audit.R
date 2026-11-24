@@ -40,7 +40,7 @@ for (f in tex_files) {
   x <- readLines(f, warn = FALSE); x <- x[!grepl("^\\s*%", x)]; x <- paste(sub("(?<!\\\\)%.*$", "", x, perl = TRUE), collapse = "\n")
   keys <- regmatches(x, gregexpr("\\\\V\\{[^}]*\\}", x))[[1]]; keys <- gsub("^\\\\V\\{|\\}$", "", keys)
   for (k in unique(keys)) add(basename(f), paste0("\\V{", k, "}"), ifelse(k %in% names(val), val[[k]], ""), ifelse(k %in% names(val), paste0(num$source_file[num$key == k], " : ", num$source_cell[num$key == k]), ""), ifelse(k %in% names(val), "from a results file", "NO SOURCE: key not found"))
-  y <- gsub("\\\\(V|ref|label|cite|input|url|includegraphics(\\[[^]]*\\])?|vspace\\*?|fbox|parbox|resizebox)\\{[^}]*\\}", " ", x)   # commands whose arguments are not text
+  y <- gsub("\\\\(V|ref|label|cite|input|url|nolinkurl|includegraphics(\\[[^]]*\\])?|vspace\\*?|fbox|parbox|resizebox)\\{[^}]*\\}", " ", x)   # commands whose arguments are not text
   y <- gsub("\\[[^]]*(linewidth|leftmargin)[^]]*\\]|\\{[0-9.]+\\\\linewidth\\}|[0-9.]+(cm|em|pt)\\b|\\\\[A-Za-z]+", " ", y)
   y <- labels_out(y)
   for (t in unique(tokens(y))) add(basename(f), paste0("typed: ", t), t, ifelse(t %in% names(allowed), allowed[[t]], ""), ifelse(t %in% names(allowed), "not a result (allowed)", "NO SOURCE: typed number"))
