@@ -25,6 +25,17 @@ A few screening numbers from the data gate had been shown before this: the two t
 
 *A sentence on why I expected each of these can be added here by Brennan. The assistant does not write it.*
 
-## Model slopes (filled in after the predictors are chosen, before any model is fitted)
+## Model slopes
 
-*(One line per predictor: the direction Brennan expects.)*
+Picked by Brennan Martin on 2026-11-23, after he chose the predictors and **before** either model was fitted (the commit that adds this section comes before the commit that adds the model results). Same method as above: three options per question, no recommended option; the answer is the option he picked, word for word.
+
+| Model | Predictor | Direction Brennan expects | Options offered |
+|---|---|---|---|
+| Model 1 | Prior month: free play per $100 wagered | **Less this month** | More this month too · Less this month · No real difference |
+| Model 1 | Months the operator has been active | **Go up** | Go down · Go up · No real difference |
+| Model 1 | Operator type (commercial against tribal) | **Commercial more** | Commercial more · Tribal more · No real difference |
+| Model 2 | Prior month: paid no state tax | **More likely no tax again** | More likely no tax again · Less likely · No real difference |
+| Model 2 | Prior month: size (log10 of dollars wagered) | **Less likely to pay no tax** | Less likely to pay no tax · More likely to pay no tax · No real difference |
+| Model 2 | Operator type (commercial against tribal) | **Tribal more likely** | Tribal more likely · Commercial more likely · No real difference |
+
+Model 1 target: free play per $100 wagered. Model 2 target: paid no state tax (1 = yes). Predictors chosen by Brennan (Q-061, Q-062): Model 1 uses prior-month free play per $100, months active and operator type; Model 2 uses prior-month paid no tax, prior-month size and operator type.
