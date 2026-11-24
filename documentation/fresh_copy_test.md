@@ -53,4 +53,4 @@ File-by-file list: `output/tables/fresh_copy_comparison.csv`.
 
 ## The temporary folder
 
-Still on disk, about 310M, at `/var/folders/b8/vgcrjyf569gbchk8cg_txn3r0000gn/T/buan314_fresh.82qnvc`. It is deleted when Brennan says so.
+Deleted on 2026-11-24 at 12:12 PT, after Brennan said to ("Yes, delete it"). It held the two fresh copies and four log files, about 310 MB. The file-by-file comparison is kept in `output/tables/fresh_copy_comparison.csv`.
