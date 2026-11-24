@@ -43,3 +43,17 @@ Notes for Brennan before he rewrites:
 - A cap on the deduction is set in state law, so the Board would recommend it and the Legislature would decide. Say who controls the decision.
 - The "10 percent" floor in prescriptive draft A comes from a Board news release about internet casino gaming, reported by a research subagent and not yet re-opened. Treat it as unverified until checked, or choose a different constraint.
 - "Free play" here means the deduction as reported in the month it was claimed. A sportsbook can claim it late, so a month's figure is not exactly that month's promotions.
+
+## Drafts, version 2 (2026-11-23), after Brennan's content decisions Q-057 to Q-060
+
+Still the assistant's wording. The content choices are Brennan's: what the estimates are for, who decides the cap, the objective and the constraints.
+
+**Descriptive (unchanged from draft A).** The Michigan Gaming Control Board needs to see how much free play the state's online sportsbooks deducted for every $100 wagered, and how often a sportsbook paid no state tax in a month, across the 15 licensed operators, commercial and tribal, month by month from January 2021 to October 2026, to learn which sportsbooks lean hardest on free-bet promotions and whether that reliance is fading.
+
+**Predictive, version 2.** At the start of each month, using only what each sportsbook reported in earlier months, the Board wants two estimates for that sportsbook's month ahead: the free play it will deduct per $100 wagered (a percent), and whether it will pay no state tax that month (yes or no), so that staff can review the free-play claims of the flagged sportsbooks first.
+
+**Prescriptive, version 2.** Given those estimates, what cap on the monthly free-play deduction, as a percent of a sportsbook's gross sports betting receipts, should the Board recommend that the Legislature write into law, to collect the most state and city tax, with one cap for every operator and no cap below the share of gross receipts that the median sportsbook-month actually deducted?
+
+Five-part check of version 2: no empty cells. Decision-maker: the Board in all three (recommending to the Legislature in the third). Value: which sportsbooks lean hardest and whether it is fading; which claims to review first; how much more tax a cap would collect.
+
+Still open (O-001): Brennan rewrites all three in his own words in `authored/problem_statements.md`. Until then every copy of these statements is labeled a working draft.

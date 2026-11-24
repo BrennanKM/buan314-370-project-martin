@@ -1,0 +1,17 @@
+"Variable 1","Variable 2","Before steps 6 and 8","With step 6 only","With step 8 only","Cleaned data (both)"
+"Kept per $100 wagered","Gross receipts",0.06,0.4,0.06,0.4
+"Prior month: kept per $100","Kept per $100 wagered",0.06,0.39,0.06,0.39
+"Kept per $100 wagered","State tax or payment",0.05,0.33,0.05,0.33
+"Kept per $100 wagered","Free play deducted (dollars)",0.05,0.31,0.05,0.31
+"Paid no state tax (1 = yes)","Kept per $100 wagered",-0.07,-0.32,-0.07,-0.32
+"Kept per $100 wagered","First active month (1 = yes)",0.04,0.29,0.04,0.29
+"Prior month: paid no tax (1 = yes)","Kept per $100 wagered",0.01,-0.23,0.01,-0.23
+"Kept per $100 wagered","Adjusted gross receipts",0.05,0.29,0.05,0.29
+"Free play per $100 wagered","Kept per $100 wagered",0.06,0.26,0.06,0.26
+"Kept per $100 wagered","Commercial operator (1 = yes)",0.04,0.23,0.04,0.23
+"Kept per $100 wagered","Dollars wagered",0.05,0.23,0.05,0.23
+"Prior month: size (log10 dollars wagered)","Kept per $100 wagered",0.1,0.27,0.1,0.27
+"Kept per $100 wagered","Year",0,0.13,0,0.13
+"Kept per $100 wagered","Months active",0,0.11,0,0.11
+"Kept per $100 wagered","Lump deduction (1 = yes)",0.03,0.13,0.03,0.13
+"Prior month: kept per $100","Lump deduction (1 = yes)",0.11,0.05,0.11,0.05

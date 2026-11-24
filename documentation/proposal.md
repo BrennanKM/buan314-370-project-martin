@@ -11,27 +11,27 @@ Milestone 1 (Parts 1 and 2 of the course instructions). Status on 2026-11-23: qu
 
 ## 2. The three problem statements
 
-> **Not final.** The text below is the AI assistant's draft A, which Brennan selected unchanged on 2026-11-23 as a starting point. The course requires the final wording to be his own. His rewrite goes in `authored/problem_statements.md` and then replaces this section (open question O-001).
+> **Not final.** The text below is the AI assistant's wording (draft A, revised to version 2 after Brennan decided on 2026-11-23 what the estimates are for, who sets the cap, the objective and the constraints). The course requires the final wording to be his own. His rewrite goes in `authored/problem_statements.md` and then replaces this section (open question O-001).
 
 | Version | Working draft (assistant-written) |
 |---|---|
 | Descriptive: what happened? | The Michigan Gaming Control Board needs to see how much free play the state's online sportsbooks deducted for every $100 wagered, and how often a sportsbook paid no state tax in a month, across the 15 licensed operators, commercial and tribal, month by month from January 2021 to October 2026, to learn which sportsbooks lean hardest on free-bet promotions and whether that reliance is fading. |
-| Predictive: what could happen? | At the start of each month, using only what each sportsbook reported in earlier months, the Board wants two estimates for that sportsbook's month ahead: the free play it will deduct per $100 wagered (a percent), and whether it will pay no state tax that month (yes or no). |
-| Prescriptive: what should be done? | Given those estimates, at what percent of a sportsbook's gross sports betting receipts should Michigan cap the monthly free-play deduction, to collect the most tax, with one cap for every operator and a cap no lower than 10 percent? |
+| Predictive: what could happen? | At the start of each month, using only what each sportsbook reported in earlier months, the Board wants two estimates for that sportsbook's month ahead: the free play it will deduct per $100 wagered (a percent), and whether it will pay no state tax that month (yes or no), so that staff can review the free-play claims of the flagged sportsbooks first. |
+| Prescriptive: what should be done? | Given those estimates, what cap on the monthly free-play deduction, as a percent of a sportsbook's gross sports betting receipts, should the Board recommend that the Legislature write into law, to collect the most state and city tax, with one cap for every operator and no cap below the share of gross receipts that the median sportsbook-month actually deducted? |
 
 ### Five-part check of the working drafts
 
 | Part | Descriptive | Predictive | Prescriptive |
 |---|---|---|---|
-| Decision-maker | The Michigan Gaming Control Board | the Board | "Michigan" (does not say who controls a cap; it is set in state law) |
+| Decision-maker | The Michigan Gaming Control Board | the Board | the Board, recommending to the Legislature, which sets the cap in law |
 | Decision or need | see how much free play was deducted and how often no tax was paid | two estimates for the month ahead | the level of a cap on the free-play deduction |
-| Outcome measure (with units) | free play per $100 wagered (percent); paid no state tax (yes or no) | the same two, for the month ahead | tax collected (dollars) |
+| Outcome measure (with units) | free play per $100 wagered (percent); paid no state tax (yes or no) | the same two, for the month ahead | state and city tax collected (dollars) |
 | Scope (one row; population, place, period) | one sportsbook in one month; 15 licensed operators; Michigan; January 2021 to October 2026 | one sportsbook in the month ahead | every licensed operator, monthly |
-| Value | which sportsbooks lean hardest on free play, and whether it is fading | **EMPTY** | **EMPTY** |
+| Value | which sportsbooks lean hardest on free play, and whether it is fading | which sportsbooks' free-play claims staff should review first | how much more tax a cap would collect, and at what level |
 
 Predictive sub-specifications: regression problem (numeric target) = free play per $100 wagered; classification problem (yes-or-no target) = paid no state tax; moment of prediction = the start of the month, using only earlier months' reports.
 
-Prescriptive parts: decision = the cap on the monthly free-play deduction, as a percent of gross receipts; objective = collect the most tax; constraints = one cap for every operator, and a cap no lower than 10 percent (the 10 percent figure is unverified).
+Prescriptive parts: decision = the cap on the monthly free-play deduction, as a percent of gross receipts; objective = collect the most tax; constraints = one cap for every operator, and no cap below the share of gross receipts that the median sportsbook-month actually deducted (a figure taken from this project's own data).
 
 ## 3. Shortlist of candidate data sources
 

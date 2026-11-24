@@ -1,0 +1,37 @@
+"Target","Variable","Correlation","Rows used"
+"Free play per $100 wagered","Lump deduction (1 = yes)",0.76,919
+"Free play per $100 wagered","Prior month: free play per $100",0.59,900
+"Free play per $100 wagered","Free play deducted (dollars)",0.49,919
+"Free play per $100 wagered","Adjusted gross receipts",-0.33,919
+"Free play per $100 wagered","First active month (1 = yes)",0.26,919
+"Free play per $100 wagered","Months active",-0.26,919
+"Free play per $100 wagered","Kept per $100 wagered",0.26,919
+"Free play per $100 wagered","Paid no state tax (1 = yes)",0.23,919
+"Free play per $100 wagered","Year",-0.21,919
+"Free play per $100 wagered","Prior month: kept per $100",0.16,902
+"Free play per $100 wagered","Prior month: paid no tax (1 = yes)",0.15,903
+"Free play per $100 wagered","Prior month: size (log10 dollars wagered)",-0.08,903
+"Free play per $100 wagered","State tax or payment",-0.08,919
+"Free play per $100 wagered","Size (log10 dollars wagered)",-0.07,919
+"Free play per $100 wagered","Month of the year (1 to 12)",-0.05,919
+"Free play per $100 wagered","Dollars wagered",-0.04,919
+"Free play per $100 wagered","Commercial operator (1 = yes)",-0.03,919
+"Free play per $100 wagered","Gross receipts",0.02,919
+"Paid no state tax (1 = yes)","Prior month: paid no tax (1 = yes)",0.79,906
+"Paid no state tax (1 = yes)","Prior month: size (log10 dollars wagered)",-0.46,906
+"Paid no state tax (1 = yes)","Size (log10 dollars wagered)",-0.44,923
+"Paid no state tax (1 = yes)","State tax or payment",-0.43,923
+"Paid no state tax (1 = yes)","Adjusted gross receipts",-0.4,923
+"Paid no state tax (1 = yes)","Gross receipts",-0.39,923
+"Paid no state tax (1 = yes)","Dollars wagered",-0.39,923
+"Paid no state tax (1 = yes)","Kept per $100 wagered",-0.32,921
+"Paid no state tax (1 = yes)","Commercial operator (1 = yes)",-0.3,923
+"Paid no state tax (1 = yes)","Months active",-0.28,923
+"Paid no state tax (1 = yes)","Free play per $100 wagered",0.23,919
+"Paid no state tax (1 = yes)","Prior month: kept per $100",-0.23,905
+"Paid no state tax (1 = yes)","Year",-0.22,923
+"Paid no state tax (1 = yes)","Prior month: free play per $100",0.22,903
+"Paid no state tax (1 = yes)","Lump deduction (1 = yes)",0.16,923
+"Paid no state tax (1 = yes)","Free play deducted (dollars)",-0.15,921
+"Paid no state tax (1 = yes)","Month of the year (1 to 12)",-0.07,923
+"Paid no state tax (1 = yes)","First active month (1 = yes)",0.05,923

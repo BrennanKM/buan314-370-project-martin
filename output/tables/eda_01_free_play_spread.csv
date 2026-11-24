@@ -1,0 +1,16 @@
+"Measure","Free play deducted per $100 wagered"
+"Operator-months (rows)",923
+"Rows with a value",919
+"Rows missing a value",4
+"Minimum",0
+"5th percentile",0.05
+"Lower quartile",1.9
+"Median",3.71
+"Upper quartile",5.53
+"95th percentile",14.68
+"Maximum",121.84
+"Mean",5.18
+"Rows at $5 or more per $100",277
+"Share at $5 or more per $100 (percent)",30.14
+"Rows at $10 or more per $100",81
+"Share at $10 or more per $100 (percent)",8.81

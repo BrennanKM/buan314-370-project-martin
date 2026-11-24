@@ -1,0 +1,5 @@
+"Dollars wagered in the month","Months (rows)","Months with a value","Lower quartile","Median free play per $100 wagered","Upper quartile","Mean free play per $100 wagered","Fewer than 30 rows"
+"Under $1 million",150,146,0.07,2.27,7.62,7.18,""
+"$1 million to under $10 million",349,349,1.7,3.67,5.67,4.53,""
+"$10 million to under $100 million",324,324,2.36,3.89,5.36,5.36,""
+"$100 million or more",100,100,3.16,3.88,4.6,3.99,""
