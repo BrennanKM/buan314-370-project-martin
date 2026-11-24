@@ -100,17 +100,20 @@ O-001 statements in his own words · O-004 open the five links · O-005 three UN
 - The LaTeX report (`report/static`, zip in `report/overleaf_upload.zip`) and the web page (`docs/index.html`) are built with the draft text and a visible draft notice. Every number in both is read from `output/tables/report_numbers.csv`. The number audit is clean.
 - Master script: 13 scripts, about 14 seconds.
 
+- Fresh-copy test run twice (`documentation/fresh_copy_test.md`). First run: all 10 PNG figures differed, because the lockfile did not list the drawing package in use. Fixed. Second run: 92 files compared, none different (19 PDF figures differ only in the date stored inside them).
+
 ### Not done, and why
 - The static report has never been compiled: there is no LaTeX on this computer. Brennan compiles in Overleaf (O-010).
 - The page is not public: GitHub Pages needs his approval (O-011).
 - No alternative-explanation check has been run (the course says to run them only when he asks).
-- The fresh-copy test, the slides and the evidence tally for the postmortem are still to come.
+- The slides, the evidence tally for the postmortem and the final repeat of the fresh-copy test are still to come.
+- The temporary folder from the fresh-copy test is still on disk; it is deleted when Brennan says so.
 
 ### Open items (details in `open_questions.md`)
 O-001 statements · O-004 five links · O-005 three UNVERIFIED fields · O-006 codebook read-through · O-008 and O-009 final writing pass on findings and models · **O-010 compile in Overleaf** · **O-011 approve GitHub Pages** · **O-012 final writing pass on both reports**.
 
 ### First step next time
-Brennan uploads the zip to Overleaf and reports the first error, or approves GitHub Pages. Otherwise the agent runs the fresh-copy test and starts the slides.
+Brennan uploads the zip to Overleaf and reports the first error, or approves GitHub Pages. Otherwise the agent starts the slides and the evidence tally.
 
 ### Plain-English explanations (study notes for the talk)
 
@@ -122,3 +125,4 @@ Brennan uploads the zip to Overleaf and reports the first error, or approves Git
 
 **Phase 8, the two reports.** The PDF report is written in LaTeX and the web report is one hand-written HTML file with its own styling, JavaScript and data, so it opens offline. Neither report has a number typed into it: a script collects every number with the file and cell it comes from, and both reports read from that one list, so they cannot disagree. The web page redraws all nine figures itself; four respond to the reader (the box plot, the no-tax line chart, the heat map and the predicted-against-actual scatter), and an explorer lets the reader pick sportsbooks and years and see the histogram and a summary table change. An audit script then checks every number in both reports and returns two lists, mismatches and numbers with no source; both are empty. Rows changed: none; the page holds all 923 rows, rounded for display only.
 
+**Phase 9, the fresh-copy test.** The test asks whether a stranger could rebuild everything from the public repository alone. I downloaded a clean copy from GitHub into a temporary folder, put the six raw workbooks in place, installed the exact package versions from the lockfile, ran the one master script, and compared every output file with mine byte for byte. The first try failed: the ten PNG figures came out as different files, because my computer had a drawing package that the lockfile never listed, so the copy drew the same pictures a different way. After naming that package in the code and recording it, the second try matched on all 92 files, apart from the creation time that every PDF stores inside itself. Rows changed: none; the copy's processed data are identical, 923 rows.

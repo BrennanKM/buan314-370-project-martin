@@ -1,0 +1,93 @@
+Output file,Fresh copy against the project
+data/processed/mgcb_operator_months.csv,identical
+docs/index.html,identical
+documentation/codebook.md,identical
+documentation/codebook_rules.csv,identical
+documentation/data_audit.md,identical
+documentation/number_audit.md,identical
+documentation/raw_file_checksums.csv,identical
+documentation/wrangling_log.md,identical
+output/figures/fig00_palette_sample.pdf,identical except the creation date stored in the PDF
+output/figures/fig00_palette_sample.png,identical
+output/figures/fig01_free_play_spread.pdf,identical except the creation date stored in the PDF
+output/figures/fig01_free_play_spread.png,identical
+output/figures/fig03_share_of_wagering.pdf,identical except the creation date stored in the PDF
+output/figures/fig03_share_of_wagering.png,identical
+output/figures/fig04_free_play_by_operator.pdf,identical except the creation date stored in the PDF
+output/figures/fig04_free_play_by_operator.png,identical
+output/figures/fig09_no_tax_by_year_and_type.pdf,identical except the creation date stored in the PDF
+output/figures/fig09_no_tax_by_year_and_type.png,identical
+output/figures/fig10_free_play_by_age_and_type.pdf,identical except the creation date stored in the PDF
+output/figures/fig10_free_play_by_age_and_type.png,identical
+output/figures/fig12_correlation_heatmap.pdf,identical except the creation date stored in the PDF
+output/figures/fig12_correlation_heatmap.png,identical
+output/figures/fig_m1_errors_vs_predicted.pdf,identical except the creation date stored in the PDF
+output/figures/fig_m1_errors_vs_predicted.png,identical
+output/figures/fig_m1_predicted_vs_actual.pdf,identical except the creation date stored in the PDF
+output/figures/fig_m1_predicted_vs_actual.png,identical
+output/figures/fig_m2_predicted_probability.pdf,identical except the creation date stored in the PDF
+output/figures/fig_m2_predicted_probability.png,identical
+output/page_data.json,identical
+output/palette.json,identical
+output/tables/eda_01_free_play_spread.csv,identical
+output/tables/eda_01b_free_play_bins.csv,identical
+output/tables/eda_02_paid_no_tax_share.csv,identical
+output/tables/eda_03_size_by_operator.csv,identical
+output/tables/eda_04_free_play_by_operator.csv,identical
+output/tables/eda_05_free_play_by_year.csv,identical
+output/tables/eda_05b_free_play_by_month.csv,identical
+output/tables/eda_06_free_play_by_operator_type.csv,identical
+output/tables/eda_07_free_play_vs_size_correlation.csv,identical
+output/tables/eda_07b_free_play_by_size_band.csv,identical
+output/tables/eda_08_no_tax_by_operator_type.csv,identical
+output/tables/eda_09_no_tax_by_year_and_type.csv,identical
+output/tables/eda_10_free_play_by_age_and_type.csv,identical
+output/tables/eda_11_unusual_months.csv,identical
+output/tables/eda_11b_unusual_month_list.csv,identical
+output/tables/eda_11c_unusual_months_by_year.csv,identical
+output/tables/eda_12_correlation_matrix.csv,identical
+output/tables/eda_12b_correlation_pairs_0.2_or_more.csv,identical
+output/tables/eda_12c_correlations_with_each_target.csv,identical
+output/tables/eda_12d_correlation_changes_after_cleaning.csv,identical
+output/tables/eda_12e_correlation_changes_by_step.csv,identical
+output/tables/explorer_checks.csv,identical
+output/tables/figure_checks.csv,identical
+output/tables/html_data_checks.csv,identical
+output/tables/model1_error_summary.csv,identical
+output/tables/model1_estimates.csv,identical
+output/tables/model2_classification_table.csv,identical
+output/tables/model2_estimates.csv,identical
+output/tables/model_candidates.csv,identical
+output/tables/model_equations.csv,identical
+output/tables/model_fit.csv,identical
+output/tables/model_hand_predictions.csv,identical
+output/tables/model_rows_left_out.csv,identical
+output/tables/model_scenario_arithmetic.csv,identical
+output/tables/model_scenarios.csv,identical
+output/tables/number_audit.csv,identical
+output/tables/palette_cvd_check.csv,identical
+output/tables/raw_file_facts.csv,identical
+output/tables/report_numbers.csv,identical
+output/tables/validation_results.csv,identical
+output/tables/wrangling_steps.csv,identical
+report/static/figures/fig01_free_play_spread.pdf,identical except the creation date stored in the PDF
+report/static/figures/fig03_share_of_wagering.pdf,identical except the creation date stored in the PDF
+report/static/figures/fig04_free_play_by_operator.pdf,identical except the creation date stored in the PDF
+report/static/figures/fig09_no_tax_by_year_and_type.pdf,identical except the creation date stored in the PDF
+report/static/figures/fig10_free_play_by_age_and_type.pdf,identical except the creation date stored in the PDF
+report/static/figures/fig12_correlation_heatmap.pdf,identical except the creation date stored in the PDF
+report/static/figures/fig_m1_errors_vs_predicted.pdf,identical except the creation date stored in the PDF
+report/static/figures/fig_m1_predicted_vs_actual.pdf,identical except the creation date stored in the PDF
+report/static/figures/fig_m2_predicted_probability.pdf,identical except the creation date stored in the PDF
+report/static/numbers.tex,identical
+report/static/tables/by_operator.tex,identical
+report/static/tables/classification.tex,identical
+report/static/tables/codebook.tex,identical
+report/static/tables/correlations_known.tex,identical
+report/static/tables/key_variables.tex,identical
+report/static/tables/model1_estimates.tex,identical
+report/static/tables/model2_estimates.tex,identical
+report/static/tables/no_tax_by_year.tex,identical
+report/static/tables/row_accounting.tex,identical
+report/static/tables/scenarios.tex,identical
+report/static/tables/wrangling_log.tex,identical
