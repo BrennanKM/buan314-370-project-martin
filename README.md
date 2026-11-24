@@ -1,15 +1,17 @@
 # Free play and tax in Michigan's online sports betting market (working title)
 
+**Interactive report: https://brennankm.github.io/buan314-370-project-martin/**
+
 **Brennan Martin** · BUAN 314-370, Descriptive Analytics & Data Management · Dr. Steven Levkoff · University of San Diego · Fall 2026
 
-> **Status, 2026-11-24:** data collected, audited, cleaned and tested; exploration, nine figures and both models done; both reports are built. **The wording of both reports, the figure titles and the problem statements is still the AI assistant's draft**, marked as such wherever it appears, until Brennan Martin has revised it. The static report has not been compiled yet and the interactive report is not published yet.
+> **Status, 2026-11-24:** data collected, audited, cleaned and tested; exploration, nine figures and both models done; both reports are built. **The wording of both reports, the figure titles and the problem statements is still the AI assistant's draft**, marked as such wherever it appears, until Brennan Martin has revised it. The static report has not been compiled yet. The interactive report is live at https://brennankm.github.io/buan314-370-project-martin/ and carries the same draft notice.
 
 ## Deliverables
 
 | Deliverable | Link |
 |---|---|
 | Static report (PDF, LaTeX compiled in Overleaf) | LaTeX source: [report/static](report/static). *PDF not yet compiled* |
-| Interactive report (GitHub Pages) | File: [docs/index.html](docs/index.html). *Not yet published* |
+| Interactive report (GitHub Pages) | **https://brennankm.github.io/buan314-370-project-martin/** (source: [docs/index.html](docs/index.html)) |
 | Recorded presentation | *not yet recorded* |
 | Slides (PDF) | *not yet built* |
 | Postmortem: the AI assistant as a partner | [documentation/postmortem.md](documentation/postmortem.md) *(not yet written)* |
