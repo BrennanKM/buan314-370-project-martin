@@ -1,0 +1,31 @@
+\section{Codebook}
+
+One row per variable in the cleaned data (\V{rows_final} rows, \V{n_columns} columns). The complete codebook, with allowed values, observed ranges, where each variable comes from and how it was transformed, is \texttt{documentation/codebook.md} in the repository.
+
+{\footnotesize
+\input{tables/codebook}
+}
+
+\section{Wrangling log}
+
+Every cleaning step in the order it ran, with the reason and the row count before and after. Steps 16a and 16b are the two parts of step 16.
+
+{\footnotesize
+\input{tables/wrangling_log}
+}
+
+\section{AI-use statement}
+
+% This statement is Brennan's. The paragraphs below are a factual draft by the AI assistant,
+% taken from the project's prompt log and decision log. Brennan revises it at his final pass
+% so that it says, truthfully, what he wrote himself.
+
+This project was carried out with an AI coding assistant, Claude Code (model Claude Fable 5.2), working in the project folder under my direction. Every prompt and its result is recorded in \texttt{documentation/prompt\_log.md}, and every decision with who made it in \texttt{documentation/process/decision\_log.md}.
+
+\textbf{What the assistant did.} It wrote and ran all of the R code; audited the raw data; proposed the cleaning plan, the exploration sub-questions and the candidate predictors; built the tables, figures, both reports and the logs; and proofread by listing problems.
+
+\textbf{What I did.} I chose the topic, the decision-maker and the two targets. I downloaded the six workbooks myself. I decided every one of the \V{cleaning_decisions} cleaning steps. I chose what I expected for each sub-question and for each model slope before the analysis ran, by picking from options the assistant offered. I chose the predictors.
+
+\textbf{The wording of this report.} \ifdraft The text of this draft was written by the AI assistant and is labeled as its draft in the repository. I have not yet revised it. \else [Brennan: state here which parts you rewrote and which you kept as drafted.] \fi
+
+\textbf{Checks on the assistant's work.} Each data step has a stated expected count that was compared with the result; \V{tests_run} tests guard the cleaned data; \V{hand_equal} of \V{hand_checks} hand-worked predictions equal the script's; and every number in this report is read from a results file by a script, not typed.

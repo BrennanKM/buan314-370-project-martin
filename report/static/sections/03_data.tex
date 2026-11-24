@@ -1,0 +1,15 @@
+\section{Data}\label{sec:data}
+
+The data are the Michigan Gaming Control Board's ``Internet Sports Betting Revenues and Taxes'' workbooks, one for each year from 2021 to 2026 \cite{mgcb_data}. The Board is the primary source: the figures are the ones operators file with it under the Lawful Sports Betting Act. I downloaded the six workbooks by hand on 23 November 2026, because the State's site terms do not allow automated access \cite{migov_terms}. The same terms do not allow the files to be republished, so the repository holds the download steps and a checksum for each file in place of the files themselves. A script compares the files with those checksums before anything else runs.
+
+One row is one licensed operator in one month. The data cover every operator licensed for internet sports betting in Michigan: \V{n_commercial} commercial Detroit casinos and \V{n_tribal} tribal operators, each working with a platform brand such as FanDuel or DraftKings. The period is January 2021 to October 2026. After cleaning there are \V{rows_final} rows and \V{n_columns} columns. Retail betting inside casinos and internet casino games are not in these files.
+
+The publisher gives four dollar amounts for each operator and month. The other variables in Table~\ref{tab:variables} were built from them. The full codebook is in Appendix~A.
+
+\begin{table}[H]
+\centering\small
+\caption{Key variables. Source: codebook (Appendix A).}\label{tab:variables}
+\input{tables/key_variables}
+\end{table}
+
+Two points about measurement matter for everything that follows. The files have no free-play column. Free play is taken as gross receipts minus adjusted gross receipts, which the law defines as the free-play deduction \cite{mcl_403}; it is the amount claimed for tax in that month, and an operator can claim it later than the promotion. And the publisher does not define ``Total Handle''; this report reads it as total dollars wagered.

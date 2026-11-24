@@ -1,0 +1,67 @@
+% Static report, BUAN 314-370 course project, Brennan Martin.
+% Compile in Overleaf with pdfLaTeX (main file: main.tex).
+% No number in the text is typed by hand: every one is \V{key}, defined in numbers.tex,
+% which scripts/08_report_numbers.R writes from the files in output/tables.
+%
+% WHOSE WORDS: the text of this report was drafted by the AI assistant (decision D-024,
+% documentation/process/assistant_drafts.md). Brennan keeps or changes it at his final
+% pass. While \drafttrue is set, every page says so. Set \draftfalse only after that pass.
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+\input{numbers}
+
+\newif\ifdraft
+\drafttrue
+
+\newcommand{\repo}{https://github.com/BrennanKM/buan314-370-project-martin}
+\newcommand{\pageaddress}{https://brennankm.github.io/buan314-370-project-martin/}
+
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+\setlist{itemsep=0.2em,topsep=0.3em}
+\renewcommand{\arraystretch}{1.15}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\ifdraft
+  \fancyhead[C]{\small\color{gray}Draft: text written by the AI assistant, not yet revised by Brennan Martin}
+\fi
+
+\begin{document}
+
+\input{sections/00_title}
+\input{sections/01_summary}
+\input{sections/02_problem}
+\input{sections/03_data}
+\input{sections/04_preparing}
+\input{sections/05_exploration}
+\input{sections/06_models}
+\input{sections/07_findings}
+\input{sections/08_limitations}
+\input{sections/09_next_steps}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\appendix
+\input{sections/10_appendices}
+
+\end{document}

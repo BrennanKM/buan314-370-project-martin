@@ -89,3 +89,36 @@ O-001 statements in his own words · O-004 open the five links · O-005 three UN
 **Phase 5 and 6, exploring.** Before anything was computed I wrote down what I expected for each of 12 sub-questions, so the results could surprise me. A script then built one summary table per sub-question, always showing how many rows sit behind each median or percentage, and flagging any group with fewer than 30 rows. It also built a correlation matrix: a grid showing, for every pair of variables, how closely they move together in a straight line, from -1 to 1. A correlation says two things move together; it does not say one causes the other. Rows changed: none; exploring only reads the cleaned data (923 rows).
 
 **Phase 6, the two models.** Both models are ordinary linear regressions fitted on every row that has all the needed values. Model 1 predicts free play per $100 wagered from last month's free play, how long the sportsbook has been active, and whether it is commercial or tribal; it used 900 rows (23 left out, 17 of them because there is no prior month). Model 2 predicts whether a sportsbook pays no state tax, coded 1 for yes, from whether it paid none last month, its size last month, and its type; a regression on a yes-or-no target is called a linear probability model and its prediction is read as a probability. It used 906 rows. I chose only predictors that are known at the start of the month, and I recorded the direction I expected for each slope before fitting. Both models were judged on the same rows they were fitted to, so they will look better here than they would on new months.
+
+## Session 2: Tue 2026-11-24, about 11:30 to 12:10 PT
+
+### What changed
+- Brennan asked to be walked through "what I found". After the first four questions he changed the process (D-024): he does all his writing at the end; until then the assistant writes its own answer for each passage, labels it, and keeps building.
+- All assistant drafts are in one list, `documentation/process/assistant_drafts.md`: "what I found" for the 12 sub-questions, the six findings, the reading of both models, three scenario cases, and the report text. Nothing was put in `authored/`.
+- Six exploration figures and three model figures are final in form, each checked against its table by the script. Titles are in one file, `documentation/figure_titles.csv`.
+- Scenario predictions for three provisional cases. Alternative explanations listed for the six findings (no check run). Plan for the web versions written.
+- The LaTeX report (`report/static`, zip in `report/overleaf_upload.zip`) and the web page (`docs/index.html`) are built with the draft text and a visible draft notice. Every number in both is read from `output/tables/report_numbers.csv`. The number audit is clean.
+- Master script: 13 scripts, about 14 seconds.
+
+### Not done, and why
+- The static report has never been compiled: there is no LaTeX on this computer. Brennan compiles in Overleaf (O-010).
+- The page is not public: GitHub Pages needs his approval (O-011).
+- No alternative-explanation check has been run (the course says to run them only when he asks).
+- The fresh-copy test, the slides and the evidence tally for the postmortem are still to come.
+
+### Open items (details in `open_questions.md`)
+O-001 statements · O-004 five links · O-005 three UNVERIFIED fields · O-006 codebook read-through · O-008 and O-009 final writing pass on findings and models · **O-010 compile in Overleaf** · **O-011 approve GitHub Pages** · **O-012 final writing pass on both reports**.
+
+### First step next time
+Brennan uploads the zip to Overleaf and reports the first error, or approves GitHub Pages. Otherwise the agent runs the fresh-copy test and starts the slides.
+
+### Plain-English explanations (study notes for the talk)
+
+*Written by the AI assistant as study notes for Brennan, in the first person so he can rehearse from them. They are not his authored text. They describe method only.*
+
+**Phase 6, figures.** Each figure answers one sub-question and its title states the finding, not the variable names. I used five chart forms: a histogram for the spread of one number, ordered bars for shares, box plots to compare a number across 15 operators, a line chart for change over time, and a heat map for the correlation matrix; a two-panel chart shows free play by age separately for each operator type. Commercial is always blue and tribal always orange, in colors chosen to stay distinct for people with color-vision deficiency. The script that draws each figure recomputes every number it shows and stops if any differs from the saved table, so a picture cannot drift from its numbers. Rows changed: none (919 or 923 rows shown, as each caption says).
+
+**Phase 6, scenario predictions.** A scenario prediction puts made-up but realistic values into the fitted equation: last month's free play, months active, operator type, last month's tax status and size. For each of three cases the script gives the predicted free play per $100 and the predicted probability of paying no tax, and it flags any case whose values lie outside what the data contain, because a prediction there reaches beyond the evidence. None of the three does. I checked one case by hand: 3.2356 + 0.4975 x 4 - 0.0323 x 48 + 0.1308 x 1 = 3.8055. Rows changed: none.
+
+**Phase 8, the two reports.** The PDF report is written in LaTeX and the web report is one hand-written HTML file with its own styling, JavaScript and data, so it opens offline. Neither report has a number typed into it: a script collects every number with the file and cell it comes from, and both reports read from that one list, so they cannot disagree. The web page redraws all nine figures itself; four respond to the reader (the box plot, the no-tax line chart, the heat map and the predicted-against-actual scatter), and an explorer lets the reader pick sportsbooks and years and see the histogram and a summary table change. An audit script then checks every number in both reports and returns two lists, mismatches and numbers with no source; both are empty. Rows changed: none; the page holds all 923 rows, rounded for display only.
+

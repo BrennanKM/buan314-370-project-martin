@@ -1,0 +1,15 @@
+\section{Limitations}\label{sec:limits}
+
+\textbf{Coverage.} The data cover internet sports betting in Michigan only. Retail sports betting and internet casino games are reported separately and are not here, although the same companies run them. The last year stops in October 2026, so 2026 is not a full year.
+
+\textbf{Who is missing.} There are no bettors in these data. One row is a sportsbook's month, so the report cannot say who received free bets, how they were used, or whether anyone was harmed. Three operators stopped offering internet sports betting during the period, and their later months are absent.
+
+\textbf{Measurement.} Free play is not published. It is taken as gross receipts minus adjusted gross receipts, the deduction the law allows, in the month it was claimed. An operator can claim it late, which is why \V{lump_months} months are flagged. The publisher does not define ``Total Handle''; if it includes wagers placed with free bets, the dollars wagered by heavy promoters are overstated. The figures are as reported by operators, and the workbooks say not all have been audited. Brand names are each operator's latest platform, not a record of which brand ran in each month.
+
+\textbf{Small groups and extreme values.} Commercial results rest on \V{n_commercial} sportsbooks, and some groups are small: the first two commercial age bands hold \V{age_com_b1_months} months each. Medians are used throughout because a few very large months move the averages.
+
+\textbf{What description cannot establish.} Every result here is an association. The report cannot say that free play causes a month with no tax, that age causes free play to fall (\V{first_2021} of the \V{first_months} operators started in 2021, so age and calendar time can hardly be separated), or what a cap would do. Other explanations for each main finding, and a check that would tell them apart, are listed in the repository (documentation/eda\_alternatives.md); none of those checks has been run.
+
+\textbf{The models.} Each model was judged on the rows it was fitted to. Nothing was held back to test them, so their fit is a best case. A linear probability model can predict below 0 or above 1, and this one did \V{m2_outside} times. The rows of one sportsbook in neighboring months are not independent, which the standard errors do not allow for.
+
+\textbf{Provenance.} Three fields of the provenance record (the version date, the citation form the publisher prefers, and a second reading of the quoted legal text) were still open when this draft was written.

@@ -1,0 +1,12 @@
+% Written by scripts/08_report_numbers.R from output/tables. Do not edit by hand.
+\begin{tabular}{@{}p{0.07\linewidth}p{0.61\linewidth}rr@{}}
+\toprule
+Step & What was done & Rows before & Rows after \\
+\midrule
+1 & Reshaped the wide workbooks to one row per operator per month. No value changed. & 1,956 & 1,956 \\
+2 & Kept each year's copy from the newest workbook that carries it; removed the duplicate copy. & 1,956 & 1,068 \\
+3 & Dropped months that are blank for every operator & 1,068 & 1,038 \\
+4 & Dropped operator-months with no wagering: Total Handle zero & 1,038 & 924 \\
+5 & Dropped the row with a negative Total Handle & 924 & 923 \\
+\bottomrule
+\end{tabular}

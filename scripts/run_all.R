@@ -15,7 +15,10 @@ scripts <- c(
   "06a_style_check.R",  # figure style: palette sample, palette file for the web page, color-vision check
   "06_figures.R",       # the five exploration figures, each checked against its summary table
   "07a_model_plan.R",   # evidence for choosing predictors (fits nothing)
-  "07_models.R"         # the two linear regressions: estimates, fit, classification table, figures, scenario predictions
+  "07_models.R",        # the two linear regressions: estimates, fit, classification table, figures, scenario predictions
+  "08_report_numbers.R",    # every number the reports use, with its source; LaTeX tables; the zip for Overleaf
+  "09_export_html_data.R",  # writes the data, numbers and figure titles into docs/index.html
+  "10_number_audit.R"       # audits every number in both reports and the figure titles (changes nothing)
 )
 
 started <- Sys.time()

@@ -80,4 +80,25 @@ Chosen by the assistant so the table could be built; which cases the decision-ma
 | 2. Small tribal sportsbook, five years in | $5 | 60 | tribal | yes | $1,500,000 | $3.78 per $100 | 0.9122 (no tax) | No | draft |
 | 3. Tribal sportsbook in its fourth month, heavy free play | $9 | 4 | tribal | yes | $3,000,000 | $7.58 per $100 | 0.8889 (no tax) | No | draft |
 
-Section E (report text: findings, recommendations, limitations) is added when the reports are drafted. The three problem statements are in `statement_drafts.md` (version 2).
+## E. Report text (assistant's draft)
+
+Both reports were built on 2026-11-24 with text drafted by the assistant. Each carries a visible notice saying so, which comes off only after Brennan's pass.
+
+| Where | What is drafted | Where Brennan changes it | Status |
+|---|---|---|---|
+| `report/static/sections/01_summary.tex` | Executive summary (244 words) | That file, or in Overleaf | draft |
+| `report/static/sections/02_problem.tex` | The setting, the decision-maker, the three statements (version 2 of `statement_drafts.md`) | That file | draft |
+| `report/static/sections/03_data.tex`, `04_preparing.tex` | Data and cleaning, described from the provenance record and wrangling log | Those files | draft |
+| `report/static/sections/05_exploration.tex` | What each figure and table shows, with "I expected" taken from his recorded picks | That file | draft |
+| `report/static/sections/06_models.tex` | What each slope means, fit, the three cases (sections C and D above) | That file | draft |
+| `report/static/sections/07_findings.tex` | Findings and five recommendations | That file | draft |
+| `report/static/sections/08_limitations.tex`, `09_next_steps.tex` | Limitations; next steps and the prescriptive statement | Those files | draft |
+| `report/static/sections/10_appendices.tex`, Appendix C | AI-use statement: a factual draft from the logs; the last paragraph must say truthfully what he wrote | That file | draft |
+| `docs/index.html` | The same content, shorter | The text between the tags; numbers and titles are filled in by script and must not be typed | draft |
+| `documentation/figure_titles.csv` | The nine figure titles (sections B and C above). One edit here changes the title in the PDF figures, the report and the page | That file | draft |
+
+How to change wording without breaking a number: in the LaTeX, leave each `\V{...}` where the number belongs; on the page, leave each `<span data-n="..."></span>`. Then run `Rscript scripts/run_all.R`. The audit at the end lists any number that was typed by hand.
+
+Claims the assistant removed from its own draft because no file in the project supports them: that free bets are the main bait in sportsbook advertising; that November and December are busier months; that other states cap the deduction; that tribal compacts set what tribal operators pay; that the Board advises the Legislature.
+
+The three problem statements are in `statement_drafts.md` (version 2).

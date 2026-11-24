@@ -60,3 +60,13 @@ save_figure <- function(plot, name, height_in = 4.2) {
   ggsave(file.path("output", "figures", paste0(name, ".pdf")), plot, width = figure_width_in, height = height_in, bg = "white", device = grDevices::pdf)
   invisible(plot)
 }
+
+# Figure titles live in one file, documentation/figure_titles.csv, so the two
+# reports and the slides always show the same wording. Each title states a
+# finding. The "wording" column says whose words they are: "assistant draft"
+# until Brennan keeps or changes the title (decision D-024).
+fig_title <- function(key) {
+  t <- read.csv(file.path("documentation", "figure_titles.csv"), stringsAsFactors = FALSE)
+  if (!key %in% t$figure) stop("No title for figure ", key, " in documentation/figure_titles.csv")
+  t$title[t$figure == key]
+}

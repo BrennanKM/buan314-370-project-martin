@@ -1,0 +1,12 @@
+\section*{Executive summary}
+\addcontentsline{toc}{section}{Executive summary}
+
+Michigan lets online sportsbooks subtract the free bets they hand out before tax is figured. This report, written for the Michigan Gaming Control Board, asks how much they subtract and how often a sportsbook pays the State nothing in a month.
+
+The data are the Board's monthly figures for all \V{n_operators} licensed operators, January 2021 to October 2026: \V{rows_final} sportsbook-months.
+
+First, the typical month deducts \$\V{fp_median} of free play per \$100 wagered; half of all months fall between \$\V{fp_q1} and \$\V{fp_q3}, and \V{fp_pct_10plus}\% reach \$\V{def_fp_high} or more. Second, no state tax was paid in \V{notax_pct}\% of sportsbook-months. For tribal operators that share fell from \V{tri_2021_notax_round}\% in 2021 to \V{tri_2026_notax_round}\% in 2026. Third, heavy free play belongs to the early months of tribal sportsbooks (\$\V{age_tri_b1_median} per \$100 in their first six months, \$\V{age_tri_b5_median} after four years); the three biggest brands, with \V{share_top3_round}\% of all dollars wagered, sit near the median.
+
+Two linear regressions use only what is known at the start of a month. The first predicts free play per \$100 with a typical miss of \$\V{m1_rmse}, too wide to rely on. The second calls whether a sportsbook will pay no tax correctly in \V{m2_correct_pct}\% of months, against \V{m2_baseline_pct}\% for always guessing the more common outcome. Both were judged on the months they were fitted to.
+
+Recommendation: review first the claims of small sportsbooks that paid no tax last month, track lump deductions separately, and collect free play issued by month before studying any cap.

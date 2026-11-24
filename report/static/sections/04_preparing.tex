@@ -1,0 +1,21 @@
+\section{Preparing the data}
+
+Every cleaning step was proposed with at least two options, decided by me, carried out by a numbered script and logged with its row count. Table~\ref{tab:rows} shows the steps that changed the number of rows. The full log of \V{cleaning_steps} entries is in Appendix~B.
+
+\begin{table}[H]
+\centering\small
+\caption{Row accounting. Source: wrangling log (Appendix B).}\label{tab:rows}
+\input{tables/row_accounting}
+\end{table}
+
+The workbooks are laid out sideways, four columns per operator, so the first step turned them into one row per operator per month: \V{cells_read} rows, with no value changed. Every year but the last appears in two workbooks and the copies agree, so one copy was kept, removing \V{rows_duplicates_removed} duplicates. \V{rows_unreported_removed} rows for two months not yet reported were dropped. So were \V{rows_no_wagering_removed} months in which an operator took no wagers, because the question is about sportsbooks that are operating and those rows would each count as a month with no tax. One row with a negative amount wagered, a closing correction after an operator stopped, was dropped. That leaves \V{rows_final}: \V{cells_read} $-$ \V{rows_duplicates_removed} $-$ \V{rows_unreported_removed} $-$ \V{rows_no_wagering_removed} $-$ \V{rows_negative_removed} $=$ \V{rows_final}.
+
+No row was removed for having an extreme value, and no missing value was filled in. Three choices keep unusual months in the data but visible:
+
+\begin{itemize}
+\item Free play per \$100 is left blank in \V{fp_missing} months: two with under \$\V{def_tiny_handle} wagered, where a ratio means little, and two where the reported deduction is negative.
+\item \V{lump_months} months in which the deduction is more than \V{def_lump_share} of the dollars wagered are flagged as lump deductions. They look like free play claimed late in one piece. The largest is \$\V{fp_max} per \$100, in a month for which the Board's own release reports a deduction that had not been taken earlier \cite{mgcb_release_2024}.
+\item Each operator's first month with wagering, \V{first_months} in all, is flagged because it is a partial month.
+\end{itemize}
+
+Section~\ref{sec:eda} reports how much the flagged months move the results. A validation script runs \V{tests_run} tests on the cleaned file each time, and all pass.

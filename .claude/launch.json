@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "report-preview", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8314", "--bind", "127.0.0.1", "--directory", "docs"], "port": 8314 }
+  ]
+}

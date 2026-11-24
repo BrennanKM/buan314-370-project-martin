@@ -1,0 +1,18 @@
+\section{Business problem}
+
+\subsection*{The setting}
+Internet sports betting began in Michigan on 22 January 2021 \cite{mgcb_data}. Each licensed operator reports to the Michigan Gaming Control Board every month \cite{mcl_416a}. Tax is not charged on everything a sportsbook wins from bettors. The law lets an operator first subtract the value of the free play its customers wagered \cite{mcl_403}, and the tax or payment to the State is \V{tax_rate}\% of what is left. A sportsbook that gives away enough free bets in a month can therefore owe nothing.
+
+Free play is also a promotion: it gives a bettor something to wager that is not the bettor's own money. A regulator that wants to protect bettors and the State's revenue has a reason to know how large the deduction is, who uses it most, and whether it is shrinking as the market gets older.
+
+\subsection*{The decision-maker}
+The Michigan Gaming Control Board, which receives the operators' monthly reports and publishes them.
+
+\subsection*{The three problem statements}
+\begin{description}[leftmargin=1.2em,style=nextline]
+\item[Descriptive] The Michigan Gaming Control Board needs to see how much free play the state's online sportsbooks deducted for every \$100 wagered, and how often a sportsbook paid no state tax in a month, across the \V{n_operators} licensed operators, commercial and tribal, month by month from January 2021 to October 2026, to learn which sportsbooks lean hardest on free-bet promotions and whether that reliance is fading.
+\item[Predictive] At the start of each month, using only what each sportsbook reported in earlier months, the Board wants two estimates for that sportsbook's month ahead: the free play it will deduct per \$100 wagered (a percent), and whether it will pay no state tax that month (yes or no), so that staff can review the free-play claims of the flagged sportsbooks first.
+\item[Prescriptive] Given those estimates, what cap on the monthly free-play deduction, as a percent of a sportsbook's gross sports betting receipts, should the Board recommend that the Legislature write into law, to collect the most state and city tax, with one cap for every operator and no cap below the share of gross receipts that the median sportsbook-month actually deducted?
+\end{description}
+
+This report takes up the first two. Sections~\ref{sec:data} to \ref{sec:eda} answer the descriptive statement. Section~\ref{sec:models} makes a first pass at the predictive one, with a linear regression for the numeric target and a linear probability model for the yes-or-no target. The prescriptive statement is not solved here; Section~\ref{sec:next} says what it would need.

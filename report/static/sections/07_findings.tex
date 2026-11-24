@@ -1,0 +1,25 @@
+\section{Findings and recommendations}\label{sec:findings}
+
+\subsection*{The answer to the descriptive statement}
+
+\textbf{How much free play?} A typical sportsbook-month deducts \$\V{fp_median} for every \$100 wagered, and half of all months fall between \$\V{fp_q1} and \$\V{fp_q3}. \V{fp_pct_10plus}\% of months reach \$\V{def_fp_high} or more.
+
+\textbf{How often is no tax paid?} In \V{notax_pct}\% of sportsbook-months, and far more often for tribal operators (\V{tri_notax_pct}\%) than for commercial ones (\V{com_notax_pct}\%).
+
+\textbf{Who leans hardest on free play?} Not the biggest brands. FanDuel, DraftKings and BetMGM take \V{share_top3_total}\% of the wagering and sit near the median. The highest medians belong to two smaller tribal sportsbooks, at \$\V{op_lvd_median} and \$\V{op_hannahville_median} per \$100.
+
+\textbf{Is it fading?} For tribal sportsbooks, yes: free play per \$100 went from \$\V{age_tri_b1_median} in the first six months to \$\V{age_tri_b5_median} after four years, and the share of months with no tax from \V{tri_2021_notax_round}\% in 2021 to \V{tri_2026_notax_round}\% in 2026. For commercial sportsbooks the median stayed between \$\V{age_com_min} and \$\V{age_com_max} at every age, and most of their no-tax months came in 2024 and 2025.
+
+\subsection*{What the models add}
+
+Both targets carry over from one month to the next. That makes the no-tax outcome easy to anticipate: knowing last month's tax status and size is enough to call \V{m2_correct_pct}\% of months correctly on the data in hand. It does not make free play per \$100 easy to anticipate. The first model's typical miss of \$\V{m1_rmse} is larger than the median itself, and \V{m1_above10_lump} of its \V{m1_above10} largest misses are lump-deduction months, which nothing in the model points to beforehand.
+
+\subsection*{What the Board should do or look at next}
+
+\begin{enumerate}
+\item \textbf{Order the review of free-play claims by last month's result.} Start each month with the sportsbooks that paid no tax the month before and are small. That is where the second model puts the highest probability of another month with no tax.
+\item \textbf{Track lump deductions as their own item.} \V{lump_months} months hold deductions larger than \V{def_lump_share} of the dollars wagered. With them the average is \$\V{fp_mean} per \$100; without them it is \$\V{without_lump_mean}. Knowing which months of promotion each lump belongs to would remove most of that noise.
+\item \textbf{Watch launches and relaunches.} Tribal sportsbooks deducted \$\V{age_tri_b1_median} per \$100 in their first six months. A new operator, or an existing license moving to a new brand, is the point at which heavy free play should be expected.
+\item \textbf{Look into the commercial no-tax months of 2024 and 2025.} \V{com_2024_notax_n} of \V{com_2024_rows} commercial months in 2024 and \V{com_2025_notax_n} of \V{com_2025_rows} in 2025 had no tax paid, after \V{com_2021_notax_n}, \V{com_2022_notax_n} and \V{com_2023_notax_n} in the three years before. This report describes that change; it does not explain it.
+\item \textbf{Do not set a cap from these numbers alone.} They show what was deducted, not what would have happened to wagering, promotions or tax under a cap.
+\end{enumerate}

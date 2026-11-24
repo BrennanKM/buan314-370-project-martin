@@ -37,3 +37,19 @@ Data needed: all 923 rows with eight columns (operator, operator type, month, do
 Reason for the explorer, in one sentence: the Board regulates each operator separately, and the report's figures can only show all of them at once.
 
 Check for the build: with the starting values the explorer's summary must equal eda_01 and eda_02 (923 months, 919 with a value, median $3.71, 8.81% at $10 or more, 449 no-tax months, 48.65%).
+
+## Built on 2026-11-24: what the page data hold and how they were rounded
+
+Written into `docs/index.html` by `scripts/09_export_html_data.R` (also saved as `output/page_data.json`, about 72 Kb). Nothing is sampled. Rounding, recorded here because the wrangling log is written by the cleaning script and covers the processed data only:
+
+| View | Records | Rounding |
+|---|---|---|
+| Explorer and the points of figure 4 | 923 rows, 8 columns | Dollars wagered to the cent; free play per $100 to four decimals; the page shows two |
+| Figures 1, 3, 9, 10 | 21 bands; 15 operators; 12 points; 10 points | As in the exploration tables (two decimals) |
+| Figure 4 boxes | 15 operators | Quartiles and medians to two decimals; whiskers by the same rule as the prototype |
+| Figure 12 | 12 by 12 correlations and the rows used for each pair | Two decimals; the script stops if any differs from eda_12 |
+| Model 1 figures | 900 points | Predicted and actual to two decimals |
+| Model 2 figure | 15 bands of 0.05 by actual outcome | Counts |
+
+Checks: `output/tables/html_data_checks.csv` (10 of 10 equal) and `output/tables/explorer_checks.csv` (four settings, compared with the page by hand in a browser on 2026-11-24: all equal).
+

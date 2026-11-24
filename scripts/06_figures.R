@@ -6,11 +6,12 @@
 # checked against the summary table that 05_eda.R saved for that sub-question:
 # the script stops if a number in a figure differs from its table.
 #
-# TITLES: each title states a finding. The wording below is the AI assistant's
-# draft (documentation/process/assistant_drafts.md, section B, decision D-024).
-# Brennan keeps or changes each one at his final pass.
+# TITLES: each title states a finding and is read from
+# documentation/figure_titles.csv. The wording there is the AI assistant's draft
+# (decision D-024) until Brennan keeps or changes it.
 #
-# Reads:  data/processed/mgcb_operator_months.csv, output/tables/eda_*.csv
+# Reads:  data/processed/mgcb_operator_months.csv, output/tables/eda_*.csv,
+#         documentation/figure_titles.csv
 # Writes: output/figures/fig01_free_play_spread, fig03_share_of_wagering,
 #         fig04_free_play_by_operator, fig09_no_tax_by_year_and_type,
 #         fig10_free_play_by_age_and_type (PNG and PDF each)
@@ -22,13 +23,7 @@ source(file.path("scripts", "00_style.R"))
 d <- read.csv(file.path("data", "processed", "mgcb_operator_months.csv"), stringsAsFactors = FALSE)
 tbl <- function(name) read.csv(file.path("output", "tables", paste0(name, ".csv")), check.names = FALSE, stringsAsFactors = FALSE)
 
-titles <- c(
-  fig01 = "Half of all sportsbook-months deducted between $1.90 and $5.53 of free play per $100 wagered; 9% deducted $10 or more",
-  fig03 = "Three sportsbooks took 77% of all dollars wagered; the nine smallest took 6% together",
-  fig04 = "The most free play per $100 came from two smaller tribal sportsbooks, not from FanDuel or DraftKings",
-  fig09 = "Tribal sportsbooks paid no state tax in 74% of months in 2021 and 20% in 2026; commercial ones swung between 0% and 56%",
-  fig10 = "Tribal sportsbooks deducted $9.05 per $100 in their first six months and $2.52 after four years; commercial ones stayed near $4"
-)
+titles <- vapply(c(fig01 = "fig01", fig03 = "fig03", fig04 = "fig04", fig09 = "fig09", fig10 = "fig10"), fig_title, character(1))
 
 # Every check is recorded: what the figure shows, what the table says, equal or not.
 checks <- list()

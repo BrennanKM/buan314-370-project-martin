@@ -3,6 +3,7 @@
 "Errors within $5 either way (rows)",846
 "Errors within $5 either way (percent)",94
 "Actual more than $10 above the prediction (rows)",18
+"Of those, months flagged as lump deductions (rows)",12
 "Actual more than $10 below the prediction (rows)",2
 "Largest error above the prediction (dollars per $100)",118.56
 "Largest error below the prediction (dollars per $100)",-51.06

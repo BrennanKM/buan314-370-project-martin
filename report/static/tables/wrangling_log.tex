@@ -1,0 +1,27 @@
+% Written by scripts/08_report_numbers.R. Do not edit by hand.
+\begin{longtable}{@{}p{0.05\linewidth}p{0.40\linewidth}p{0.33\linewidth}p{0.07\linewidth}p{0.07\linewidth}@{}}
+\toprule
+\textbf{Step} & \textbf{What changed} & \textbf{Why} & \textbf{Before} & \textbf{After} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+1 & Reshaped the wide workbooks to one row per operator per month. No value changed. & One row must be one operator in one month. & 1,956 & 1,956 \\
+2 & Kept each year's copy from the newest workbook that carries it; removed the duplicate copy. & Every year except 2026 appears in two workbooks; the copies agree in every cell where both hold a number. & 1,956 & 1,068 \\
+3 & Dropped months that are blank for every operator (December 2026, November 2026). & They have not been reported yet, so they are not observations. & 1,068 & 1,038 \\
+4 & Dropped operator-months with no wagering: Total Handle zero (96) or blank (18). Receipts and tax are zero or blank in all of them. & The question is about sportsbooks that are operating; these are months before launch, after stopping, or paused. & 1,038 & 924 \\
+5 & Dropped the row with a negative Total Handle (Little Traverse Bay Bands of Odawa Indians, August 2023: -1,419.34). & A closing correction after the operator stopped, not a month of betting. & 924 & 923 \\
+10 & Removed typed footnote markers from operator names (19 labels became 15 names) and added a short name for figures. & One operator needs one name. & 923 & 923 \\
+11 & Kept the platform provider (brand) as printed on each year's sheet and added each operator's latest label as a second column. & Brand labels change across years; the operator is the stable key. & 923 & 923 \\
+12 & Created operator type from the label of the tax column: commercial (210 rows), tribal (713 rows). & Operator type is not a column in the file. & 923 & 923 \\
+13 & Converted the launch date from a spreadsheet day number in text to a date (one cell held text and reads as the same date as its other form). & Wrong type in the file. & 923 & 923 \\
+7 & No change: 50 months with negative gross receipts kept as reported. & A sportsbook can pay out more than it takes in a month. & 923 & 923 \\
+15 & No change: tax or payment kept as reported, including 232 months with positive adjusted receipts and zero tax. & The reported figure is what was paid; it defines the yes-or-no target. & 923 & 923 \\
+16a & Created: month\_date, free\_play\_deduction (gross minus adjusted receipts), free\_play\_per\_100, kept\_per\_100, paid\_no\_tax, log10\_handle, months\_active. & Needed by the problem statements; each is defined in the codebook. & 923 & 923 \\
+9 & Added the flag lump\_deduction = 1 where the deduction is more than a quarter of that month's handle. No value changed. & Free play can be claimed in a later month as a lump; the flag lets findings be checked with and without those months. & 923 & 923 \\
+14 & Added the flag first\_active\_month = 1 for each operator's first month with wagering. No value changed. & First months are partial (January 2021 starts on the 22nd). & 923 & 923 \\
+8 & Kept the rows; set free\_play\_deduction and free\_play\_per\_100 to missing where adjusted receipts exceed gross receipts. & A negative amount is not free play and the file does not explain it. & 923 & 923 \\
+6 & Kept the rows; set free\_play\_per\_100 and kept\_per\_100 to missing where Total Handle is under \$10,000. & Ratios on a few hundred dollars are not meaningful. & 923 & 923 \\
+16b & Created prior-month versions (prior\_free\_play\_per\_100, prior\_kept\_per\_100, prior\_log10\_handle, prior\_paid\_no\_tax), filled only when the operator's previous calendar month is in the data (906 of 923 rows). & Things known at the start of a month, for the predictive statement. & 923 & 923 \\
+17 & Gave columns plain lower-case names and fixed their order (28 columns). Dollar amounts are kept exactly as published, with no rounding. & Clear names; no value changed. & 923 & 923 \\
+\end{longtable}

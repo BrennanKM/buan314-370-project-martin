@@ -101,33 +101,33 @@ fit_tbl <- bind_rows(fit_rows) %>% mutate(
 save_tbl(fit_tbl, "model_fit")
 
 # ---- Figures (project style) ----
-# Titles state a finding. The wording is the AI assistant's draft (assistant_drafts.md,
-# section C, decision D-024); Brennan keeps or changes each one. The numbers in the
-# titles are computed here, so they cannot drift from the tables.
+# Titles state a finding and are read from documentation/figure_titles.csv (the AI
+# assistant's draft wording until Brennan keeps or changes it). The numbers in the
+# titles are checked against the tables by scripts/10_number_audit.R.
 u1 <- used$model1; u1$predicted <- fitted(fits$model1); u1$error <- resid(fits$model1)
 r2_1 <- summary(fits$model1)$r.squared; rmse_1 <- sqrt(mean(u1$error^2))
 within5 <- mean(abs(u1$error) <= 5); big_under <- sum(u1$error > 10); big_over <- sum(u1$error < -10)
 save_tbl(tibble(Measure = c("Rows used", "Errors within $5 either way (rows)", "Errors within $5 either way (percent)", "Actual more than $10 above the prediction (rows)",
-                            "Actual more than $10 below the prediction (rows)", "Largest error above the prediction (dollars per $100)", "Largest error below the prediction (dollars per $100)"),
-                Value = c(nrow(u1), sum(abs(u1$error) <= 5), round(100 * within5, 2), big_under, big_over, round(max(u1$error), 2), round(min(u1$error), 2))), "model1_error_summary")
+                            "Of those, months flagged as lump deductions (rows)", "Actual more than $10 below the prediction (rows)", "Largest error above the prediction (dollars per $100)", "Largest error below the prediction (dollars per $100)"),
+                Value = c(nrow(u1), sum(abs(u1$error) <= 5), round(100 * within5, 2), big_under, sum(u1$error > 10 & u1$lump_deduction == 1), big_over, round(max(u1$error), 2), round(min(u1$error), 2))), "model1_error_summary")
 u1$Operator_type <- u1$operator_type
 lim <- range(c(u1$predicted, u1$free_play_per_100))
 g1 <- ggplot(u1, aes(predicted, free_play_per_100, colour = Operator_type)) +
   geom_abline(slope = 1, intercept = 0, colour = "#555555", linetype = "dashed") + geom_point(alpha = 0.55, size = 1.3) +
   scale_colour_manual(values = project_colors$operator_type, name = "Operator type") + coord_equal(xlim = lim, ylim = lim) +
-  labs(title = wrap_title(sprintf("Model 1 accounts for %.0f%% of the differences in free play per $100; its typical miss is $%.2f", 100 * r2_1, rmse_1)), subtitle = "Dashed line: prediction equals actual",
+  labs(title = wrap_title(fig_title("fig_m1_predicted_vs_actual")), subtitle = "Dashed line: prediction equals actual",
        x = "Predicted free play per $100 wagered (dollars)", y = "Actual free play per $100 wagered (dollars)", caption = caption_source(nrow(u1), "In-sample: fit is measured on the rows used to fit.")) + theme_project()
 save_figure(g1, "fig_m1_predicted_vs_actual", height_in = 6.2)
 g2 <- ggplot(u1, aes(predicted, error, colour = Operator_type)) + geom_hline(yintercept = 0, colour = "#555555", linetype = "dashed") + geom_point(alpha = 0.55, size = 1.3) +
   scale_colour_manual(values = project_colors$operator_type, name = "Operator type") +
-  labs(title = wrap_title(sprintf("Model 1 lands within $5 for %.0f%% of months; its big misses are months far above what it predicted", 100 * within5)), subtitle = sprintf("Error = actual minus predicted. %d months came in more than $10 above the prediction, %d more than $10 below", big_under, big_over),
+  labs(title = wrap_title(fig_title("fig_m1_errors_vs_predicted")), subtitle = sprintf("Error = actual minus predicted. %d months came in more than $10 above the prediction, %d more than $10 below", big_under, big_over),
        x = "Predicted free play per $100 wagered (dollars)", y = "Prediction error (dollars per $100 wagered)", caption = caption_source(nrow(u1), "In-sample: fit is measured on the rows used to fit.")) + theme_project()
 save_figure(g2, "fig_m1_errors_vs_predicted", height_in = 4.4)
 u2$predicted <- p2; u2$Actual <- factor(ifelse(u2$paid_no_tax == 1, "Paid no tax", "Paid tax"), levels = c("Paid no tax", "Paid tax"))
 g3 <- ggplot(u2, aes(predicted, fill = Actual)) + annotate("rect", xmin = -Inf, xmax = 0, ymin = -Inf, ymax = Inf, fill = "#F2F2F2") + annotate("rect", xmin = 1, xmax = Inf, ymin = -Inf, ymax = Inf, fill = "#F2F2F2") +
   geom_histogram(binwidth = 0.05, boundary = 0, colour = "white", linewidth = 0.2) + geom_vline(xintercept = 0.5, linetype = "dashed", colour = "#555555") +
   facet_wrap(~ Actual, ncol = 1) + scale_fill_manual(values = project_colors$paid_no_tax, guide = "none") +
-  labs(title = wrap_title(sprintf("Model 2 puts %.0f%% of sportsbook-months on the right side of the 0.5 cutoff; always guessing \"paid tax\" gets %.0f%%", 100 * mean(pred_yes == u2$paid_no_tax), 100 * max(share_yes, 1 - share_yes))), subtitle = "Dashed line: the 0.5 cutoff. Shaded: predictions below 0 or above 1",
+  labs(title = wrap_title(fig_title("fig_m2_predicted_probability")), subtitle = "Dashed line: the 0.5 cutoff. Shaded: predictions below 0 or above 1",
        x = "Predicted probability of paying no state tax", y = "Operator-months", caption = caption_source(nrow(u2), "In-sample: fit is measured on the rows used to fit.")) + theme_project()
 save_figure(g3, "fig_m2_predicted_probability", height_in = 5)
 
