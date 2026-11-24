@@ -4,7 +4,7 @@ One row per rubric line, per item in the instructions' "Deliverables and submiss
 
 Status values: `todo` · `in progress` · `met` · `at risk`. Owner is who has to make it true.
 
-Last updated: 2026-11-24, 12:12 PT.
+Last updated: 2026-11-24, 12:06 PT.
 
 
 ## A. Rubric (project = 100%)
