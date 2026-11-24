@@ -56,7 +56,9 @@ caption_source <- function(n_rows, extra = NULL) {
 # Save a figure as PNG and PDF, 6.5 inches wide, in output/figures.
 save_figure <- function(plot, name, height_in = 4.2) {
   dir.create(file.path("output", "figures"), recursive = TRUE, showWarnings = FALSE)
-  ggsave(file.path("output", "figures", paste0(name, ".png")), plot, width = figure_width_in, height = height_in, dpi = 300, bg = "white")
+  # The PNG device is named, not left to ggsave: ggsave quietly uses the ragg package when it happens to be
+  # installed and another device when it is not, which made a fresh copy draw different files (fresh-copy test, 2026-11-24).
+  ggsave(file.path("output", "figures", paste0(name, ".png")), plot, width = figure_width_in, height = height_in, dpi = 300, bg = "white", device = ragg::agg_png)
   ggsave(file.path("output", "figures", paste0(name, ".pdf")), plot, width = figure_width_in, height = height_in, bg = "white", device = grDevices::pdf)
   invisible(plot)
 }

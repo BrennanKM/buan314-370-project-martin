@@ -2,14 +2,14 @@
 
 **Brennan Martin** · BUAN 314-370, Descriptive Analytics & Data Management · Dr. Steven Levkoff · University of San Diego · Fall 2026
 
-> **Status, 2026-11-23:** question and data source chosen; data collected, audited, cleaned and tested. The exploration, figures, models and both reports are not built yet. Nothing below is final.
+> **Status, 2026-11-24:** data collected, audited, cleaned and tested; exploration, nine figures and both models done; both reports are built. **The wording of both reports, the figure titles and the problem statements is still the AI assistant's draft**, marked as such wherever it appears, until Brennan Martin has revised it. The static report has not been compiled yet and the interactive report is not published yet.
 
 ## Deliverables
 
 | Deliverable | Link |
 |---|---|
-| Static report (PDF, LaTeX compiled in Overleaf) | *not yet built* |
-| Interactive report (GitHub Pages) | *not yet published* |
+| Static report (PDF, LaTeX compiled in Overleaf) | LaTeX source: [report/static](report/static). *PDF not yet compiled* |
+| Interactive report (GitHub Pages) | File: [docs/index.html](docs/index.html). *Not yet published* |
 | Recorded presentation | *not yet recorded* |
 | Slides (PDF) | *not yet built* |
 | Postmortem: the AI assistant as a partner | [documentation/postmortem.md](documentation/postmortem.md) *(not yet written)* |
@@ -20,7 +20,11 @@ How much do Michigan's online sportsbooks rely on promotional free play, and wha
 
 ### The three problem statements
 
-*To be written by Brennan Martin in his own words (`authored/problem_statements.md`). Working drafts are in [documentation/proposal.md](documentation/proposal.md).*
+*Working drafts in the AI assistant's wording; the content choices are Brennan Martin's. He rewrites them in his own words (`authored/problem_statements.md`).*
+
+- **Descriptive.** The Michigan Gaming Control Board needs to see how much free play the state's online sportsbooks deducted for every $100 wagered, and how often a sportsbook paid no state tax in a month, across the 15 licensed operators, commercial and tribal, month by month from January 2021 to October 2026, to learn which sportsbooks lean hardest on free-bet promotions and whether that reliance is fading.
+- **Predictive.** At the start of each month, using only what each sportsbook reported in earlier months, the Board wants two estimates for that sportsbook's month ahead: the free play it will deduct per $100 wagered (a percent), and whether it will pay no state tax that month (yes or no), so that staff can review the free-play claims of the flagged sportsbooks first.
+- **Prescriptive.** Given those estimates, what cap on the monthly free-play deduction, as a percent of a sportsbook's gross sports betting receipts, should the Board recommend that the Legislature write into law, to collect the most state and city tax, with one cap for every operator and no cap below the share of gross receipts that the median sportsbook-month actually deducted?
 
 ## Data
 
@@ -38,7 +42,7 @@ Software: R 4.6.1 (with RStudio if you like). Package versions are locked in `re
 2. Download the six raw workbooks by hand into `data/raw` (steps above).
 3. In R, run `renv::restore()` to install the package versions this project used. (Opening R in the folder installs `renv` itself the first time.)
 4. Run `Rscript scripts/run_all.R` from the project folder, or `source("scripts/run_all.R")` in R.
-5. Outputs appear in `data/processed`, `documentation` and `output`. Expected run time: about 10 seconds.
+5. Outputs appear in `data/processed`, `documentation`, `output`, `report/static` and `docs/index.html`. Expected run time: about 15 seconds for the 13 scripts. The last script is a number audit; it should report 0 mismatches and 0 numbers with no source.
 
 ## Scripts
 
@@ -62,7 +66,7 @@ Run in this order by `scripts/run_all.R`.
 | 12 | `scripts/09_export_html_data.R` | Builds the data each view of the web page needs and writes it, the numbers and the figure titles into the page | processed data, `output/tables/*.csv`, `documentation/figure_titles.csv`, `output/palette.json`, `docs/index.html` | `docs/index.html` (data block, numbers, titles), `output/page_data.json`, `output/tables/html_data_checks.csv`, `explorer_checks.csv` | dplyr, jsonlite |
 | 13 | `scripts/10_number_audit.R` | Audits every number in both reports and the figure titles against its source; changes nothing | `report/static/sections/*.tex`, `docs/index.html`, `documentation/figure_titles.csv`, `output/tables/report_numbers.csv` | `output/tables/number_audit.csv`, `documentation/number_audit.md` | none |
 
-Exploration, figure, model and page-data scripts are added here as they are built.
+The static report is compiled separately: upload `report/overleaf_upload.zip` (written by script 11) to Overleaf and press Recompile.
 
 ## Folder map
 
