@@ -104,16 +104,16 @@ O-001 statements in his own words · O-004 open the five links · O-005 three UN
 
 ### Not done, and why
 - The static report has never been compiled: there is no LaTeX on this computer. Brennan compiles in Overleaf (O-010).
-- The page is not public: GitHub Pages needs his approval (O-011).
+- (Later the same session) Brennan approved publishing. The page is live at https://brennankm.github.io/buan314-370-project-martin/ and is byte for byte the file in the repository. Still to try: a private window and a real phone.
 - No alternative-explanation check has been run (the course says to run them only when he asks).
 - The slides, the evidence tally for the postmortem and the final repeat of the fresh-copy test are still to come.
 - The temporary folder from the fresh-copy test is still on disk; it is deleted when Brennan says so.
 
 ### Open items (details in `open_questions.md`)
-O-001 statements · O-004 five links · O-005 three UNVERIFIED fields · O-006 codebook read-through · O-008 and O-009 final writing pass on findings and models · **O-010 compile in Overleaf** · **O-011 approve GitHub Pages** · **O-012 final writing pass on both reports**.
+O-001 statements · O-004 five links · O-005 three UNVERIFIED fields · O-006 codebook read-through · O-008 and O-009 final writing pass on findings and models · **O-010 compile in Overleaf** · **O-012 final writing pass on both reports**. (O-011, GitHub Pages, was answered: yes.)
 
 ### First step next time
-Brennan uploads the zip to Overleaf and reports the first error, or approves GitHub Pages. Otherwise the agent starts the slides and the evidence tally.
+Brennan uploads the zip to Overleaf and reports the first error. Otherwise the agent starts the slides and the evidence tally.
 
 ### Plain-English explanations (study notes for the talk)
 
